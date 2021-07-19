@@ -29,12 +29,15 @@
   color: #222a31;
 }
 
+
+
 #nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 8vh;
   border-bottom: 1px solid black;
+  background: rgb(255, 255, 255); 
   .logo {
     width: 30%;
     img {

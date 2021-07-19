@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <div class="nav-footer">
-      <router-link to="/about" class="about">À Propos <i class="fas fa-info-circle"></i></router-link> |
+      <router-link to="/about" class="about">À Propos </router-link> |
       <p>Condition</p> |
       <p>Confidentialité</p>
     </div>  
