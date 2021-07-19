@@ -1,13 +1,27 @@
 <template>
   <div id="nav">
     <div class="logo">
-      <img alt="Vue logo" src="./assets/Logos/logo-2.png">
+      <router-link to="/" class='navigation'><img alt="Logo Groupomania" id="logo" src="./assets/Logos/logo-3.png"></router-link>
+      
     </div>
-    <router-link to="/" class='home'><i class="fas fa-home"></i></router-link> |
-    <router-link to="/about"><i class="fas fa-info-circle"></i></router-link>
+    <div class="search-bar">
+      <input type="text" placeholder="&#xF002; Rechercher" id="search" />
+    </div>
+    <div class="nav-bar">
+      <router-link to="/" class='navigation'><i class="fas fa-home"></i></router-link>
+      <router-link to="/message" class='navigation'><i class="fas fa-comment-dots"></i></router-link>
+      <router-link to="/like" class='navigation'><i class="fas fa-heart"></i></router-link>
+      <router-link to="/user" class="navigation"><i class="fas fa-user-circle"></i></router-link>
+      <!-- <router-link to="/about" class="navigation"><i class="fas fa-info-circle"></i></router-link> -->
+    </div>
   </div>
   <router-view/>
 </template>
+
+<script>
+  // const search = document.getElementById('search');
+  
+</script>
 
 <style lang="scss">
 #app {
@@ -15,31 +29,51 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #222a31;
 }
 
 #nav {
   display: flex;
   align-items: center;
-  height: 10vh;
+  justify-content: space-between;
+  height: 8vh;
+  border-bottom: 1px solid black;
   .logo {
-    width: 10vw;
-    height: 10vh;
+    width: 30%;
     img {
-      width: 5vw;
+      width: 8vw;
     }
   }
-  .home {
-    margin-right: 30px;
-    font-size: x-large;
+  .search-bar {
+    position: relative;
+    width: 40%;
+    input {
+      height: 3vh;
+      width: 12vw;
+      text-align: center;
+      border: 1px solid rgb(197, 197, 197);
+      border-radius: 5px;
+      background: rgb(248, 248, 248);
+    }
+    .search {
+      position: absolute ;
+      left: 0;
+    }
+  }
+  .nav-bar {
+    width: 30%;
+    .navigation {
+      margin-right: 30px;
+      font-size: x-large;
+    }
   }
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: #808080;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: #000000;
     }
   }
 }
