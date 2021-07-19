@@ -1,6 +1,6 @@
 <template>
-  <div id="like">
-    <h1>This is an Like page</h1>
+  <div class="publication">
+    <h1>Ici c'est pour Publier</h1>
 
     <Footer/>
   </div>

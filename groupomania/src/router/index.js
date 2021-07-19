@@ -4,12 +4,18 @@ import About from '../views/About.vue'
 import User from '../views/User.vue'
 import Message from '../views/Message.vue'
 import Like from '../views/Like.vue'
+import Publication from '../views/Publication.vue'
 
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/publication',
+    name: 'Publication',
+    component: Publication
   },
   {
     path: '/about',

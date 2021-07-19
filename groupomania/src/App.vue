@@ -9,6 +9,7 @@
     </div>
     <div class="nav-bar">
       <router-link to="/" class='navigation'><i class="fas fa-home"></i></router-link>
+      <router-link to="/publication" class='navigation'><i class="far fa-plus-square"></i></router-link>
       <router-link to="/message" class='navigation'><i class="fas fa-comment-dots"></i></router-link>
       <router-link to="/like" class='navigation'><i class="fas fa-heart"></i></router-link>
       <router-link to="/user" class="navigation"><i class="fas fa-user-circle"></i></router-link>
@@ -18,10 +19,6 @@
   <router-view/>
 </template>
 
-<script>
-  // const search = document.getElementById('search');
-  
-</script>
 
 <style lang="scss">
 #app {
