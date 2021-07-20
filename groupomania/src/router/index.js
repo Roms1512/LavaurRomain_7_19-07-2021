@@ -5,6 +5,7 @@ import User from '../views/User.vue'
 import Message from '../views/Message.vue'
 import Like from '../views/Like.vue'
 import Publication from '../views/Publication.vue'
+import Setting from '../views/Setting.vue'
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
     path: '/like',
     name: 'Like',
     component: Like
+  },
+  {
+    path: '/setting',
+    name: 'Setting',
+    component: Setting
   }
 ]
 

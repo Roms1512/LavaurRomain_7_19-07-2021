@@ -5,6 +5,32 @@
         <p>{{ utilisateur }}</p>
         <i class="far fa-edit"></i>
       </div>
+      <div class="utilisateur-friends">
+        <!-- amis 1 -->
+        <Friend/>
+        <!-- amis 2 -->
+        <Friend/>
+        <!-- amis 3 -->
+        <Friend/>
+        <!-- amis 3 -->
+        <Friend/>
+        <!-- amis 3 -->
+        <Friend/>
+        <!-- amis 3 -->
+        <Friend/>
+        <!-- amis 3 -->
+        <Friend/>
+        <!-- amis 3 -->
+        <Friend/>
+        <!-- amis 3 -->
+        <Friend/>
+        <!-- amis 3 -->
+        <Friend/>
+        <!-- amis 3 -->
+        <Friend/>
+        <!-- amis 3 -->
+        <Friend/>
+      </div>
     </div>
 
     <Footer/>
@@ -36,21 +62,29 @@
         right: 1.5vw;
       }
     }
+    .utilisateur-friends {
+      width: 30%;
+      height: 74vh;
+      border-right: 1px solid black;
+      overflow: scroll;
+    }
   }
 }
 </style>
 
 <script>
 import { mapState } from 'vuex'
+import Friend from '@/components/Friend.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'like',
   components: {
+    Friend,
     Footer
   },
   computed: {
-    ...mapState(['utilisateur'])
+    ...mapState(['utilisateur', 'status'])
   }
 }
 </script>
