@@ -1,6 +1,9 @@
 <template>
-  <div class="user">
+  <div id="user">
     <h1>This is an User page</h1>
+    <div class="user">
+
+    </div>
     <router-link to="/setting" class='navigation'><i class="fas fa-cog"></i></router-link>
     <router-view/>
     
@@ -18,3 +21,7 @@ export default {
   } 
 }
 </script>
+
+<style lang="scss">
+
+</style>

@@ -36,7 +36,7 @@
   align-items: center;
   justify-content: space-between;
   height: 8vh;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(192, 192, 192);
   background: rgb(255, 255, 255); 
   .logo {
     width: 30%;
