@@ -38,18 +38,21 @@
 </template>
 
 <style lang="scss">
+$border: 1px solid rgb(192, 192, 192);
+$couleur-bg-1: rgb(255, 255, 255);
+
 #message {
   .message {
     margin: 5vh auto;
     width: 60vw;
     height: 81vh;
-    border: 1px solid rgb(192, 192, 192);
-    background: rgb(255, 255, 255);
+    border: $border;
+    background: $couleur-bg-1;
     .utilisateur {
       position: relative;
       width: 100%;
       height: 7vh;
-      border-bottom: 1px solid rgb(192, 192, 192);
+      border-bottom: $border;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -65,7 +68,7 @@
     .utilisateur-friends {
       width: 30%;
       height: 74vh;
-      border-right: 1px solid black;
+      border-right: $border;
       overflow: scroll;
     }
   }

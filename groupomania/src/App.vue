@@ -21,23 +21,26 @@
 
 
 <style lang="scss">
+$couleur-lien: rgb(17,150,246);
+$border: 1px solid rgb(192, 192, 192);
+$couleur-bg-1: rgb(255, 255, 255);
+$couleur-bg-2: rgba(224, 224, 224, 0.472);
+$border-secondaire:1px solid rgb(231, 231, 231);
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #222a31;
 }
-
-
 
 #nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 8vh;
-  border-bottom: 1px solid rgb(192, 192, 192);
-  background: rgb(255, 255, 255); 
+  border-bottom: $border;
+  background: $couleur-bg-1; 
   .logo {
     width: 30%;
     img {
@@ -51,9 +54,9 @@
       height: 3vh;
       width: 12vw;
       text-align: center;
-      border: 1px solid rgb(197, 197, 197);
+      border: $border;
       border-radius: 5px;
-      background: rgb(248, 248, 248);
+      background: $couleur-bg-2;
     }
     .search {
       position: absolute ;

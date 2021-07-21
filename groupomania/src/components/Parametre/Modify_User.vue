@@ -1,6 +1,8 @@
 <template>
   <div id="modify">
-    <p class="modify">Modifier Profil</p>
+    <div class="modify">
+      <p>Modifier Profil</p>
+    </div>
   </div>
 </template>
 
@@ -11,18 +13,29 @@ export default {
 </script>
 
 <style lang="scss">
+$border-secondaire:1px solid rgb(231, 231, 231);
+$couleur-bg-2: rgba(224, 224, 224, 0.472);
+$if-hover: 3px solid rgba(189, 189, 189, 0.794);
+$if-active: 3px solid rgb(97, 97, 97);
+
 #modify {
-  padding-top:1.4vh;
-  height: 5vh;
-  border-bottom: 1px solid rgb(231, 231, 231);
+  border-bottom: $border-secondaire;
   .modify {
-    font-size: larger;
-    margin: 0.2vh;
-  }
+    padding-top:1.4vh;
+    height: 5vh;
+    p{
+      font-size: larger;
+      margin: 0.2vh;
+    }
   &:hover {
     cursor: pointer;
-    background: rgba(224, 224, 224, 0.472);
-    border-left: 2px solid rgb(167, 167, 167);
+    background: $couleur-bg-2;
+    border-left: $if-hover;
+  }
+  }
+  .modify-active {
+    background: $couleur-bg-2;
+    border: $if-active;
   }
 }
 </style>

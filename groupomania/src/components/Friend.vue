@@ -22,6 +22,12 @@ export default {
 </script>
 
 <style lang="scss">
+$couleur-titre-secondaire: rgb(192, 192, 192);
+$couleur-bg-2: rgba(224, 224, 224, 0.472);
+$if-hover: 3px solid rgba(189, 189, 189, 0.794);
+$if-active: 3px solid rgb(97, 97, 97);
+$couleur-icon-utilisateur: rgba(189, 189, 189);
+
 .friends {
   .friend {
       padding-top: 1.2vh;
@@ -32,6 +38,7 @@ export default {
       align-items: center;
         i {
           font-size: xxx-large;
+          color: $couleur-icon-utilisateur;
         }
         .name {
             height: 5vh;
@@ -40,15 +47,19 @@ export default {
             margin: 2px;
           }
           .status {
-            color: rgb(192, 192, 192);
+            color: $couleur-titre-secondaire;
           }
         }
     &:hover{
       cursor: pointer;
+      background: $couleur-bg-2;
+      border-left: $if-hover;
     }
   }
+  
   .friend-active {
-    background: rgba(194, 194, 194, 0.555);
+    border-left: $if-active;
+    background: $couleur-bg-2;
   }
 }
 </style>

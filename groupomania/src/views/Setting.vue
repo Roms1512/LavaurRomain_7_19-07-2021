@@ -3,6 +3,8 @@
     <div class="setting">
       <div class="parametre">
         <ModifyUser/>
+
+        <p class="delete-profile">Supprimer mon Profil</p>
       </div>
       <div class="sous-parametre">
         <ContentModify/>
@@ -28,6 +30,10 @@ export default {
 </script>
 
 <style lang="scss">
+$couleur-suppression: rgb(255, 31, 31);
+$border: 1px solid rgb(192, 192, 192);
+$couleur-bg-1: rgb(255, 255, 255);
+
 #setting {
   .setting {
     display: flex;
@@ -35,18 +41,29 @@ export default {
     margin: 5vh auto;
     width: 60vw;
     height: 100vh;
-    border: 1px solid rgb(192, 192, 192);
-    background: rgb(255, 255, 255);
+    border: $border;
+    background: $couleur-bg-1;
     .parametre {
+      position: relative;
       width: 30%;
       height: 100%;
-      border-right: 0.5px solid rgb(192, 192, 192);
+      border-right: $border;
+      .delete-profile {
+        position: absolute;
+        font-weight: bold;
+        color: $couleur-suppression;
+        top: 92vh;
+        left: 0.8vw;
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
     .sous-parametre {
       overflow: scroll;
       position: relative;
       height: 100%;
-      
+
     }
   }
 }
