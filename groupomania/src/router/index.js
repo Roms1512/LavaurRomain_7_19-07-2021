@@ -4,7 +4,7 @@ import About from '../views/About.vue'
 import User from '../views/User.vue'
 import Message from '../views/Message.vue'
 import Like from '../views/Like.vue'
-import Publication from '../views/Publication.vue'
+import Post from '../views/Post.vue'
 import Setting from '../views/Setting.vue'
 
 const routes = [
@@ -14,9 +14,9 @@ const routes = [
     component: Home
   },
   {
-    path: '/publication',
-    name: 'Publication',
-    component: Publication
+    path: '/post',
+    name: 'Post',
+    component: Post
   },
   {
     path: '/about',

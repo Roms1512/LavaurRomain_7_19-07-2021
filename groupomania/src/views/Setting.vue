@@ -3,8 +3,11 @@
     <div class="setting">
       <div class="parametre">
         <ModifyUser/>
-
-        <p class="delete-profile">Supprimer mon Profil</p>
+        <div class="supr">
+          <button title="Suprimer le profil">
+            <p class="delete-profile">Supprimer mon Profil</p>
+          </button>
+        </div>
       </div>
       <div class="sous-parametre">
         <ContentModify/>
@@ -48,14 +51,21 @@ $couleur-bg-1: rgb(255, 255, 255);
       width: 30%;
       height: 100%;
       border-right: $border;
-      .delete-profile {
-        position: absolute;
-        font-weight: bold;
-        color: $couleur-suppression;
-        top: 92vh;
-        left: 0.8vw;
-        &:hover {
+      .supr{
+        
+        position: relative;
+        top: 85vh;
+        display: flex;
+        justify-content: center;
+        button {
           cursor: pointer;
+          border: none;
+          background: none;
+          .delete-profile {
+            font-weight: bold;
+            font-size: medium;
+            color: $couleur-suppression;
+          }
         }
       }
     }

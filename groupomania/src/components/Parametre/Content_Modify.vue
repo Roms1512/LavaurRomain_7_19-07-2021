@@ -7,7 +7,11 @@
           <i class="fas fa-user-circle"></i>
           <p>{{ utilisateur }}</p>
         </div>
-        <p class="modification-photo">Modifier la photo de profile</p>
+        <div class="modif">
+          <button title="Modifier photo de profil">
+            <p class="modification-photo">Modifier la photo de profile</p>
+          </button>
+        </div>
       </div>
       <!-- Formulaire de Modification -->
       <form method="post" action="" class="formulaire">
@@ -80,15 +84,24 @@ $couleur-icon-utilisateur: rgba(189, 189, 189);
         font-weight: bold;
       }
     }
-    .modification-photo {
-      margin: 0;
-      padding-top: 1.5vh;
-      font-size: smaller;
-      font-weight: bold;
-      color: $couleur-lien;
-      text-align: left;
-      &:hover {
-        cursor: pointer;
+    .modif {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+      button {
+        border: none;
+        background: none;
+        .modification-photo {
+          margin: 0;
+          padding-top: 1.5vh;
+          font-size: smaller;
+          font-weight: bold;
+          color: $couleur-lien;
+          text-align: left;
+        }
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }

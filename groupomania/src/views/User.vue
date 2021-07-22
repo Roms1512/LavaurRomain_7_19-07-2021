@@ -1,23 +1,26 @@
 <template>
   <div id="user">
-    <h1>This is an User page</h1>
-    <div class="user">
-
-    </div>
-    <router-link to="/setting" class='navigation'><i class="fas fa-cog"></i></router-link>
-    <router-view/>
-    
+    <Utilisateur/>
+    <Publication/>
     <Footer/>
   </div>
 </template>
 
 <script>
+import {mapState} from 'vuex'
+import Utilisateur from '@/components/Profile/Utilisateur.vue'
+import Publication from '@/components/Profile/Publication.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'like',
   components: {
-    Footer
+    Footer,
+    Utilisateur,
+    Publication
+  },
+  computed: {
+    ...mapState(['utilisateur', 'bio', 'publication', 'abonnés', 'abonnements'])
   } 
 }
 </script>

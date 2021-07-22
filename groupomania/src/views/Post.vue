@@ -1,5 +1,5 @@
 <template>
-  <div class="publication">
+  <div class="post">
     <h1>Ici c'est pour Publier</h1>
 
     <Footer/>
