@@ -6,12 +6,24 @@ import Message from '../views/Message.vue'
 import Like from '../views/Like.vue'
 import Post from '../views/Post.vue'
 import Setting from '../views/Setting.vue'
+import Connexion from '../views/Connexion.vue'
+import Inscription from '../views/Inscription.vue'
 
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/login',
+    name: 'Connexion',
+    component: Connexion
+  },
+  {
+    path: '/signup',
+    name: 'Inscription',
+    component: Inscription
   },
   {
     path: '/post',

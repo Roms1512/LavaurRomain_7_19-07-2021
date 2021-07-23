@@ -1,0 +1,98 @@
+<template>
+  <div id="connexion">
+    <div class="menu-connexion">
+      <p class='navigation'>Connexion</p>
+      <router-link to="/signup" class='navigation'>Inscription</router-link>
+    </div>
+    <div class="connexion">
+      <h3>Veuillez vous Connecter</h3>
+      <!-- Formulaire -->
+      <form action="" method="post" class="form-connect">
+          <!-- Adresse mail -->
+          <div class="mail">
+            <label for="mail">Adresse Mail</label>
+            <input type="mail" name="mail" required>
+          </div>
+
+          <!-- Mots de passe -->
+          <div class="password">
+            <label for="password">Mots de Passe</label>
+            <input type="password" name="password" required>
+          </div>
+          <button>Connexion</button>
+      </form>
+    </div>
+
+    <Footer/>
+  </div>
+</template>
+
+<script>
+import Footer from '@/components/Footer.vue'
+
+export default {
+  name: 'connexion',
+  components: {
+    Footer
+  }
+}
+</script>
+
+<style lang="scss">
+$border: 1px solid rgb(192, 192, 192);
+$couleur-bg-1: rgb(255, 255, 255);
+$couleur-lien: rgb(17,150,246);
+
+#connexion {
+  .menu-connexion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 10vw;
+    margin: auto;
+  }
+  .connexion {
+    position: relative;
+    margin: 3vh auto 40vh;
+    width: 25vw;
+    height: 30vh;
+    border: $border;
+    background: $couleur-bg-1;
+    h3 {
+      margin-top: 3vh;
+    }
+    .form-connect {
+      margin: auto;
+      width: 17vw;
+      height: 20vh;
+      padding-top: 2vh;
+      .mail, .password {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2vh;
+        input {
+          height: 2vh;
+          width: 50%;
+          border-radius: 5px;
+          border: $border;
+        }
+      }
+      button {
+        position: relative;
+        top: 6vh;
+        width: 6vw;
+        height: 4vh;
+        border: none;
+        border-radius: 10px;
+        font-size: medium;
+        font-weight: bold;
+        color: white;
+        background: $couleur-lien;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+</style>

@@ -14,7 +14,7 @@
         </div>
       </div>
       <!-- Formulaire de Modification -->
-      <form method="post" action="" class="formulaire">
+      <form method="get" action="" class="formulaire">
         <!-- Nom Utilisateur -->
         <div class="pseudo">
           <label for="name">Nom Utilisateur</label>
