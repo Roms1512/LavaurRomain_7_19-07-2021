@@ -48,14 +48,14 @@ $couleur-lien: rgb(17,150,246);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 10vw;
+    width: 12%;
     margin: auto;
   }
   .connexion {
     position: relative;
     margin: 3vh auto 40vh;
-    width: 25vw;
-    height: 30vh;
+    width: 500px;
+    height: 310px;
     border: $border;
     background: $couleur-bg-1;
     h3 {
@@ -63,8 +63,8 @@ $couleur-lien: rgb(17,150,246);
     }
     .form-connect {
       margin: auto;
-      width: 17vw;
-      height: 20vh;
+      width: 340px;
+      height: 192px;
       padding-top: 2vh;
       .mail, .password {
         display: flex;
@@ -79,9 +79,9 @@ $couleur-lien: rgb(17,150,246);
       }
       button {
         position: relative;
-        top: 6vh;
-        width: 6vw;
-        height: 4vh;
+        top: 7vh;
+        width: 120px;
+        height: 40px;
         border: none;
         border-radius: 10px;
         font-size: medium;

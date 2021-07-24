@@ -1,8 +1,9 @@
 <template>
   <div id="modify">
     <div class="modify">
-      <p>Modifier Profil</p>
+      <p><router-link to="/modify" class='navigation modification'>Modifier Profil</router-link></p>
     </div>
+    <router-view/>
   </div>
 </template>
 
@@ -21,13 +22,15 @@ $if-active: 3px solid rgb(97, 97, 97);
 #modify {
   border-bottom: $border-secondaire;
   .modify {
-    padding-top:1.4vh;
-    height: 5vh;
-    p{
+    padding-bottom: 1vh;
+    height: 48px;
+    p .modification{
+      color: black;
       font-size: larger;
-      margin: 0.2vh;
+      margin: 0 auto;
     }
   &:hover {
+    height: 48px;
     cursor: pointer;
     background: $couleur-bg-2;
     border-left: $if-hover;

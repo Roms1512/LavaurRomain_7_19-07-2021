@@ -2,7 +2,9 @@
   <div id="setting">
     <div class="setting">
       <div class="parametre">
-        <ModifyUser/>
+        <div class="modify">
+          <p><router-link to="/modify" class='navigation modification'>Modifier Profil</router-link></p>
+        </div>
         <div class="supr">
           <button title="Suprimer le profil">
             <p class="delete-profile">Supprimer mon Profil</p>
@@ -14,11 +16,11 @@
       </div>
     </div>
     <Footer/>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import ModifyUser from '@/components/Parametre/Modify_User.vue'
 import ContentModify from '@/components/Parametre/Content_Modify.vue'
 import Footer from '@/components/Footer.vue'
 
@@ -26,7 +28,6 @@ export default {
   name: 'setting',
   components: {
     Footer,
-    ModifyUser,
     ContentModify
   } 
 }
@@ -36,6 +37,10 @@ export default {
 $couleur-suppression: rgb(255, 31, 31);
 $border: 1px solid rgb(192, 192, 192);
 $couleur-bg-1: rgb(255, 255, 255);
+$border-secondaire:1px solid rgb(231, 231, 231);
+$couleur-bg-2: rgba(224, 224, 224, 0.472);
+$if-hover: 3px solid rgba(189, 189, 189, 0.794);
+$if-active: 3px solid rgb(97, 97, 97);
 
 #setting {
   .setting {
@@ -47,12 +52,30 @@ $couleur-bg-1: rgb(255, 255, 255);
     border: $border;
     background: $couleur-bg-1;
     .parametre {
-      position: relative;
       width: 30%;
       height: 100%;
       border-right: $border;
-      .supr{
-        
+      .modify {
+        padding-top: 0.1vh;
+        padding-bottom: 1vh;
+        height: 48px;
+        border-bottom: $border-secondaire;
+        background: $couleur-bg-2;
+        border-left: $if-active;
+        p .modification{
+          color: black;
+          font-size: larger;
+          margin: auto;
+        }
+        &:hover {
+          cursor: pointer;
+          background: $couleur-bg-2;
+          border-left: $if-hover;
+        }
+      }
+      .modify-active {
+      }
+      .supr{ 
         position: relative;
         top: 85vh;
         display: flex;
