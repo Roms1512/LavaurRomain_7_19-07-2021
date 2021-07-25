@@ -24,7 +24,7 @@ $if-active: 3px solid rgb(97, 97, 97);
   .publication {
     margin: 0 auto 1vh ;
     width: 60vw;
-    height: 55vh;
+    height: 50vh;
     .sous-partie {
       margin: -3px auto 0 auto;
       display: flex;

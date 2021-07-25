@@ -28,15 +28,20 @@
         </div>
         <h5>Informations personnelles</h5>
           <p class="info">Fournissez vos informations personnelles, même si le compte est utilisé pour une entreprise, un animal ou autre chose. Elles n’apparaîtront pas sur votre profil public.</p>
-        <!-- Genre -->
-        <div class="genre">
-          <label for="genre">Genre</label>
-          <input type="text" maxlength="5" aria-label="genre" name="genre" placeholder="Femme"/>
+        <!-- Mail -->
+        <div class="mail">
+          <label for="mail">Adresse Mail</label>
+          <input type="mail" name="mail" aria-label="mail" placeholder="Dupont05@outlook.com"/>
         </div>
         <!-- Téléphone -->
         <div class="telephone">
           <label for="tel">Numéro de Téléphone</label>
           <input type="tel" name="tel" aria-label="tel" placeholder="0612345678"/>
+        </div>
+        <!-- Genre -->
+        <div class="genre">
+          <label for="genre">Genre</label>
+          <input type="text" maxlength="5" aria-label="genre" name="genre" placeholder="Femme, Homme, Autre"/>
         </div>
 
         <!-- Boutton Envoyer -->
@@ -115,7 +120,7 @@ $couleur-icon-utilisateur: rgba(189, 189, 189);
     display: flex;
     flex-direction: column;
     width: 80%;
-    .pseudo, .biographie, .genre, .telephone {
+    .pseudo, .biographie, .genre, .telephone, .mail {
       display: flex;
       justify-content: space-between;
       margin-bottom: 2vh;
@@ -131,7 +136,7 @@ $couleur-icon-utilisateur: rgba(189, 189, 189);
       margin: 1vh 5vw 4vh;
       font-size: small;
     }
-    .pseudo, .genre {
+    .pseudo, .genre, .mail {
       input {
         height: 3.2vh;
       }
@@ -154,7 +159,7 @@ $couleur-icon-utilisateur: rgba(189, 189, 189);
     .envoyer-formulaire {
       position: relative;
       left: 8vw;
-      top: 10vh;
+      top: 4vh;
       width: 7vw;
       height: 5vh;
       border: none;

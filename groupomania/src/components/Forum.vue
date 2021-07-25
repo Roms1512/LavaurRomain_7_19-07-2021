@@ -24,6 +24,38 @@
       <p>Excelent</p>
       <p>Excelent</p>
       <p>Excelent</p>
+
+      <h2>Images</h2>
+      <p>Super Image</p>
+      <p>Super Image</p>
+      <p>Super Image</p>
+      <p>Super Image</p>
+      <p>Super Image</p>
+      <p>Super Image</p>
+      <p>Super Image</p>
+      <p>Super Image</p>
+      
+      <h2>Publication</h2>
+      <p>Excelent</p>
+      <p>Excelent</p>
+      <p>Excelent</p>
+      <p>Excelent</p>
+      <p>Excelent</p>
+      <p>Excelent</p>
+      <p>Excelent</p>
+      <p>Excelent</p>
+      <p>Excelent</p>
+      <p>Excelent</p>
+
+      <h2>Images</h2>
+      <p>Super Image</p>
+      <p>Super Image</p>
+      <p>Super Image</p>
+      <p>Super Image</p>
+      <p>Super Image</p>
+      <p>Super Image</p>
+      <p>Super Image</p>
+      <p>Super Image</p>
     </div>
   </div>
 </template>
@@ -40,9 +72,9 @@ $couleur-bg-1: rgb(255, 255, 255);
 
 #forum {
   .forum{
-    margin: 5vh 0 5vh 17.5vw;
+    margin: 5vh 0 5vh 16.5vw;
     width: 65vw;
-    height: 82vh;
+    height: 81.5vh;
     border: $border;
     background: $couleur-bg-1;
     overflow: scroll;

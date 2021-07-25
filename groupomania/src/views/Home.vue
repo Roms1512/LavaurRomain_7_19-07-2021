@@ -1,6 +1,9 @@
 <template>
   <div id="home">
     <div class="home">
+      <div class="footer">
+        <Footer/>
+      </div>
       <Forum/>
       <div class="contact">
         <h4>Abonnés</h4>
@@ -28,7 +31,6 @@
         </div>
       </div>
     </div>
-    <Footer/>
   </div>
 </template>
 
@@ -56,10 +58,17 @@ $couleur-bg-1: rgb(255, 255, 255);
   .home {
     display: flex;
     align-items: flex-start;
+    .footer {
+      position: fixed;
+      top: 88vh;
+      right: 1vw;
+      width: 16vw;
+    }
     .contact {
+      position: relative;
       margin: 1vw auto;
       .abonner {
-        height: 76vh;
+        height: 65vh;
         width: 16vw;
         overflow: scroll;
       }

@@ -53,14 +53,15 @@ $couleur-icon-utilisateur: rgba(189, 189, 189);
       border-bottom: $border;
       .image {
         width: 30%;
+        position: relative;
         i {
-          font-size: 125px;
+          font-size: 130px;
           color: $couleur-icon-utilisateur;
         }
         button {
           height: 125px;
-          border: none;
           cursor: pointer;
+          border: none;
         }
       }
       .info-profil {
