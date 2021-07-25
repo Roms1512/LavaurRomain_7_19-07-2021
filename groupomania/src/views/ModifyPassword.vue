@@ -1,13 +1,13 @@
 <template>
-  <div id="setting">
-    <div class="setting">
+  <div id="modifyPassword">
+    <div class="modifyPassword">
       <div class="parametre">
         <!-- Modifier Profile -->
-        <div class="modify active ">
-          <p><router-link to="/modify" class='navigation modification'>Modifier Profil</router-link></p>
+        <div class="modify">
+          <p><router-link to="/setting" class='navigation modification'>Modifier Profil</router-link></p>
         </div>
         <!-- Modifier Password -->
-        <div class="modify">
+        <div class="modify active">
           <p><router-link to="/modifyPassword" class='navigation modification'>Changer de Mots de Passe</router-link></p>
         </div>
         <!-- Supprimer Profile -->
@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="sous-parametre">
-        <ContentModify/>
+        <ContentPassword/>
       </div>
     </div>
     <Footer/>
@@ -27,14 +27,14 @@
 </template>
 
 <script>
-import ContentModify from '@/components/Parametre/Content_Modify.vue'
+import ContentPassword from '@/components/Parametre/Content_Password.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
-  name: 'setting',
+  name: 'modifyPassword',
   components: {
     Footer,
-    ContentModify
+    ContentPassword
   } 
 }
 </script>
@@ -48,17 +48,17 @@ $couleur-bg-2: rgba(224, 224, 224, 0.472);
 $if-hover: 3px solid rgba(189, 189, 189, 0.794);
 $if-active: 3px solid rgb(97, 97, 97);
 
-#setting {
-  .setting {
+#modifyPassword {
+  .modifyPassword {
     display: flex;
     position: relative;
     margin: 5vh auto;
     width: 65vw;
-    height: 100vh;
+    height: 60vh;
     border: $border;
     background: $couleur-bg-1;
     .parametre {
-      width: 55%;
+      width: 30%;
       height: 100%;
       border-right: $border;
       .modify {
@@ -66,6 +66,7 @@ $if-active: 3px solid rgb(97, 97, 97);
         padding-bottom: 1vh;
         height: 48px;
         border-bottom: $border-secondaire;
+        
         .modification{
           color: black;
           font-size: larger;
@@ -78,12 +79,12 @@ $if-active: 3px solid rgb(97, 97, 97);
         }
       }
       .active {
-          background: $couleur-bg-2;
-          border-left: $if-active;
-        }
+        background: $couleur-bg-2;
+        border-left: $if-active;
+      }
       .supr{ 
         position: relative;
-        top: 78vh;
+        top: 38vh;
         display: flex;
         justify-content: center;
         button {
@@ -102,7 +103,7 @@ $if-active: 3px solid rgb(97, 97, 97);
       overflow: scroll;
       position: relative;
       height: 100%;
-
+      width: 70%;
     }
   }
 }

@@ -8,7 +8,7 @@ import Post from '../views/Post.vue'
 import Setting from '../views/Setting.vue'
 import Connexion from '../views/Connexion.vue'
 import Inscription from '../views/Inscription.vue'
-import Modify from '../views/Setting.vue'
+import ModifyPassword from '../views/ModifyPassword.vue'
 
 const routes = [
   {
@@ -27,9 +27,9 @@ const routes = [
     component: Inscription
   },
   {
-    path: '/modify',
-    name: 'Modify',
-    component: Modify
+    path: '/modifyPassword',
+    name: 'ModifyPassword',
+    component: ModifyPassword
   },
   {
     path: '/post',
