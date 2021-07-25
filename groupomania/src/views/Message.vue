@@ -44,7 +44,7 @@ $couleur-bg-1: rgb(255, 255, 255);
 #message {
   .message {
     margin: 5vh auto;
-    width: 60vw;
+    width: 65vw;
     height: 81vh;
     border: $border;
     background: $couleur-bg-1;
