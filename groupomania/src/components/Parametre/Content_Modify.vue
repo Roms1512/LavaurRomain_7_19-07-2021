@@ -8,7 +8,7 @@
           <p>{{ utilisateur }}</p>
         </div>
         <div class="modif">
-          <button title="Modifier photo de profil">
+          <button id="modifyPhoto" title="Modifier photo de profil">
             <p class="modification-photo">Modifier la photo de profile</p>
           </button>
         </div>
@@ -18,25 +18,25 @@
         <!-- Nom Utilisateur -->
         <div class="pseudo">
           <label for="name">Nom Utilisateur</label>
-          <input type="text" name="name" placeholder="Jean-dupont-123">
+          <input type="text" name="name" aria-label="name" placeholder="Jean-dupont-123">
         </div>
           <p class="info">Aidez les gens à trouver votre compte à l’aide de votre nom le plus connu, que ce soit votre nom complet, votre surnom ou votre nom d’entreprise.</p>
         <!-- Biographie -->
         <div class="biographie">
           <label for="bio">Bio</label>
-          <textarea name="bio" placeholder="Bonjours à tous je m'appel..."/>
+          <textarea name="bio" aria-label="bio" placeholder="Bonjours à tous je m'appel..."/>
         </div>
-        <h6>Informations personnelles</h6>
+        <h5>Informations personnelles</h5>
           <p class="info">Fournissez vos informations personnelles, même si le compte est utilisé pour une entreprise, un animal ou autre chose. Elles n’apparaîtront pas sur votre profil public.</p>
         <!-- Genre -->
         <div class="genre">
           <label for="genre">Genre</label>
-          <input type="text" maxlength="5" name="genre" placeholder="Femme"/>
+          <input type="text" maxlength="5" aria-label="genre" name="genre" placeholder="Femme"/>
         </div>
         <!-- Téléphone -->
         <div class="telephone">
           <label for="tel">Numéro de Téléphone</label>
-          <input type="tel" name="tel" placeholder="0612345678"/>
+          <input type="tel" name="tel" aria-label="tel" placeholder="0612345678"/>
         </div>
 
         <!-- Boutton Envoyer -->
@@ -55,6 +55,12 @@ export default {
     ...mapState(['utilisateur'])
   }
 }
+
+// const modifyPhoto = document.getElementById('modifyPhoto');
+
+// modifyPhoto.addEventListener('click', event => {
+//   modifyPhoto.innerHTML = `Nombre de clics : ${event.detail}`;
+// });
 </script>
 
 <style lang="scss">
@@ -123,7 +129,7 @@ $couleur-icon-utilisateur: rgba(189, 189, 189);
     .info {
       text-align: justify;
       margin: 1vh 5vw 4vh;
-      font-size: x-small;
+      font-size: small;
     }
     .pseudo, .genre {
       input {
@@ -141,8 +147,8 @@ $couleur-icon-utilisateur: rgba(189, 189, 189);
         width: 28%;
       }
     }
-    h6 {
-      margin-bottom: 1vh;
+    h5 {
+      margin-bottom: 0;
     }
     // Boutton Envoyer
     .envoyer-formulaire {

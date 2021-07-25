@@ -9,7 +9,7 @@
         </div>
         <div class="info-profil">
           <div class="pseudo">
-            <p>{{ utilisateur }}</p>
+            <h3>{{ utilisateur }}</h3>
             <router-link to="/setting" class='navigation'><i class="fas fa-cog"></i></router-link>
           </div>
           <div class="nombre-abonner">
@@ -78,6 +78,9 @@ $couleur-icon-utilisateur: rgba(189, 189, 189);
         }
         .pseudo {
           font-size: x-large;
+          h3 {
+            margin-right: 2vw;
+          }
         }
         .nombre-abonner {
           p {

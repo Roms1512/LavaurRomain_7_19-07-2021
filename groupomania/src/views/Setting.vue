@@ -73,8 +73,6 @@ $if-active: 3px solid rgb(97, 97, 97);
           border-left: $if-hover;
         }
       }
-      .modify-active {
-      }
       .supr{ 
         position: relative;
         top: 85vh;

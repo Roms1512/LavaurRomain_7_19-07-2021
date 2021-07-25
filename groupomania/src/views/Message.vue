@@ -2,7 +2,7 @@
   <div id="message">
     <div class="message">
       <div class="utilisateur">
-        <p>{{ utilisateur }}</p>
+        <h4>{{ utilisateur }}</h4>
         <i class="far fa-edit"></i>
       </div>
       <div class="utilisateur-friends">
@@ -57,7 +57,7 @@ $couleur-bg-1: rgb(255, 255, 255);
       align-items: center;
       justify-content: center;
       font-size: x-large;
-      p {
+      h4 {
         width: 100%;
       }
       i{

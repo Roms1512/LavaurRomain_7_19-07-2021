@@ -11,19 +11,19 @@
           <!-- Adresse mail -->
           <div class="pseudo">
             <label for="pseudo">Nom d'Utilisateur</label>
-            <input type="text" name="pseudo" required>
+            <input type="text" name="pseudo" aria-label="pseudo" required>
           </div>
 
           <!-- Adresse mail -->
           <div class="mail">
             <label for="mail">Adresse Mail</label>
-            <input type="mail" name="mail" required>
+            <input type="mail" name="mail" aria-label="mail" required>
           </div>
 
           <!-- Mots de passe -->
           <div class="password">
             <label for="password">Mots de Passe</label>
-            <input type="password" name="password" required>
+            <input type="password" name="password" aria-label="password" required>
           </div>
           <button>Inscription</button>
       </form>

@@ -11,13 +11,13 @@
           <!-- Adresse mail -->
           <div class="mail">
             <label for="mail">Adresse Mail</label>
-            <input type="mail" name="mail" required>
+            <input type="mail" aria-label="mail" name="mail" required>
           </div>
 
           <!-- Mots de passe -->
           <div class="password">
             <label for="password">Mots de Passe</label>
-            <input type="password" name="password" required>
+            <input type="password" name="password" aria-label="password" required>
           </div>
           <button>Connexion</button>
       </form>

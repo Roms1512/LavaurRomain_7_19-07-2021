@@ -19,7 +19,7 @@
     margin: auto;
     width: 40vw;
     font-size: small;
-    color: gray;
+    color: #4F4F4F;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -40,7 +40,7 @@
   }
 
   a {
-    color: gray;
+    color: #4F4F4F;
     text-decoration: none;
   }
 </style>
