@@ -3,22 +3,32 @@ const express = require('express');
 const app = express();
 
 app.use((req, res, next) => {
-  console.log('requête recue !');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
   next();
-});
+})
 
-app.use((req, res, next) => {
-  res.status(201);
-  next();
-});
-
-app.use((req, res, next) => {
-  res.json({message: 'Votre Requette a bien été recue !'});
-  next();
-});
-
-app.use((req, res, next) => {
-  console.log('Réponse envoyer avec succées');
+app.use('/api/stuff', (req, res, next) => {
+  const stuff = [
+    {
+      _id: 'dcudusqc',
+      title: 'Mon premier Objet',
+      description: ' les infos de mon premier objet',
+      imageUrl: '',
+      price: 4900,
+      userId: 'uhcuscusecibsqc',
+    },
+    {
+      _id: 'dcudusqc',
+      title: 'Mon premier Objet',
+      description: ' les infos de mon premier objet',
+      imageUrl: '',
+      price: 4900,
+      userId: 'uhcuscusecibsqc',
+    },
+  ];
+  res.status(200).json(stuff);
 });
 
 module.exports = app;

@@ -13,9 +13,17 @@ export default createStore({
     user: 'Leny_Laurenti',
     status: 'En Ligne'
   },
+  getters: {
+  },
   mutations: {
+    INCREMENT_PUBLICATION(state) {
+      state.publication ++
+    }
   },
   actions: {
+    incrementPublication(context) {
+      context.commit('INCREMENT_PUBLICATION')
+    }
   },
   modules: {
   }
