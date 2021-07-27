@@ -5,7 +5,7 @@
       <div class="picture">
         <div class="photo-profile">
           <i class="fas fa-user-circle"></i>
-          <p v-text="utilisateur"></p>
+          <p>{{ utilisateur }}</p>
         </div>
         <div class="modif">
           <button id="modifyPhoto" title="Modifier photo de profil">
@@ -53,38 +53,50 @@
 
 <script>
 import {mapState} from 'vuex'
+// import {mapAction} from 'vuex'
 
 export default {
   name: 'content-modify',
   computed: {
-    ...mapState(['utilisateur', 'email', 'telephone', 'genre'])
+    ...mapState(['utilisateur', 'email', 'telephone', 'genre']),
   },
-  mounted() {
-    if (localStorage.utilisateur || localStorage.bio || localStorage.email || localStorage.telephone || localStorage.genre) {
-      this.utilisateur = localStorage.utilisateur;
-      this.bio = localStorage.bio;
-      this.email = localStorage.email;
-      this.telephone = localStorage.telephone;
-      this.genre = localStorage.genre;
-    }
-  },
-  watch:{
-    utilisateur(newName) {
-      localStorage.utilisateur = newName;
-    },
-    bio(newName) {
-      localStorage.bio = newName;
-    },
-    telephone(newName) {
-      localStorage.telephone = newName;
-    },
-    email(newName) {
-      localStorage.email = newName;
-    },
-    genre(newName) {
-      localStorage.genre = newName;
+  methods: {
+    persist() {
+      event.preventDefault();
+      console.log('Stocker Donnée Perso dans le LocalStorage');
+      localStorage.utilisateur = this.utilisateur;
+      localStorage.genre = this.genre;
+      localStorage.telephone = this.telephone;
+      localStorage.email = this.email;
+      localStorage.bio = this.bio;
     }
   }
+  // mounted() {
+  //   if (localStorage.utilisateur || localStorage.bio || localStorage.email || localStorage.telephone || localStorage.genre) {
+  //     this.utilisateur = localStorage.utilisateur;
+  //     this.bio = localStorage.bio;
+  //     this.email = localStorage.email;
+  //     this.telephone = localStorage.telephone;
+  //     this.genre = localStorage.genre;
+  //   }
+  // },
+  // watch:{
+  //   utilisateur(newName) {
+  //     localStorage.utilisateur = newName;
+  //   },
+  //   bio(newBio) {
+  //     localStorage.bio = newBio;
+  //   },
+  //   telephone(newTel) {
+  //     localStorage.telephone = newTel;
+  //   },
+  //   email(newMail) {
+  //     localStorage.email = newMail;
+  //   },
+  //   genre(newGenre) {
+  //     localStorage.genre = newGenre;
+  //   }
+  // }
 }
 
 </script>

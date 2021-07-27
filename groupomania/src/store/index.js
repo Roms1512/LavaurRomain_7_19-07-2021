@@ -19,14 +19,6 @@ export default createStore({
   mutations: {
   },
   actions: {
-    persist() {
-      localStorage.utilisateur = this.utilisateur;
-      localStorage.genre = this.genre;
-      localStorage.telephone = this.telephone;
-      localStorage.email = this.email;
-      localStorage.bio = this.bio;
-      console.log('maintenant prétendre que j\'ai fait plus de choses...');
-    }
   },
   modules: {
   }
