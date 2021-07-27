@@ -5,8 +5,8 @@
         <i class="fas fa-th"></i>
         <h3>Publications</h3>
       </div>
-      <h4 v-if="$store.state.publication == 0">Il n'y a aucune publication !</h4>
-      <button @click="incrementPublication">Publier</button>
+      <h4>Il n'y a aucune publication !</h4>
+      <button>Publier</button>
     </div>
   </div>
 </template>
@@ -14,11 +14,6 @@
 <script>
 export default {
   name: 'publication',
-  methods: {
-    incrementPublication() {
-      this.$store.dispatch('incrementPublication')
-    }
-  }
 }
 </script>
 

@@ -4,7 +4,7 @@
       <div class="parametre">
         <!-- Modifier Profile -->
         <div class="modify active ">
-          <p><router-link to="/modify" class='navigation modification'>Modifier Profil</router-link></p>
+          <p><router-link to="/setting" class='navigation modification'>Modifier Profil</router-link></p>
         </div>
         <!-- Modifier Password -->
         <div class="modify">

@@ -25,6 +25,12 @@
             <label for="password">Mots de Passe</label>
             <input type="password" name="password" aria-label="password" required>
           </div>
+
+          <!-- Confirmer Mots de passe -->
+          <div class="password">
+            <label for="confirmPassword">Confirmer le Mots de Passe</label>
+            <input type="password" name="confirmPassword" aria-label="confirmPassword" required>
+          </div>
           <button>Inscription</button>
       </form>
     </div>
@@ -82,10 +88,14 @@ $couleur-lien: rgb(17,150,246);
           border-radius: 5px;
           border: $border;
         }
+        label {
+          width: 40%;
+          text-align: left;
+        }
       }
       button {
         position: relative;
-        top: 2.1vh;
+        top: 1.2vh;
         width: 120px;
         height: 40px;
         border: none;
