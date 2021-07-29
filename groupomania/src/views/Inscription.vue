@@ -7,7 +7,7 @@
     <div class="inscription">
       <h3>Veuillez vous Inscrire</h3>
       <!-- Formulaire -->
-      <form action="" method="get" class="form-connect">
+      <form action="" method="post" class="form-connect">
           <!-- Adresse mail -->
           <div class="pseudo">
             <label for="pseudo">Nom d'Utilisateur</label>
