@@ -1,12 +1,12 @@
 <template>
   <div id="contact">
-    <div class="contact">
-          <i class="fas fa-user-circle"></i>
-          <div class="name">
-              <p>{{ user }}</p>
-              <p class="status">{{ status }}</p>
-          </div>
-        </div>
+    <router-link to="/friend" class='contact'>
+      <i class="fas fa-user-circle"></i>
+      <div class="name">
+        <p>{{ otherUser.user }}</p>
+        <p class="status">{{ otherUser.status }}</p>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ import {mapState} from 'vuex'
 export default {
   name: 'friend',
   computed: {
-    ...mapState(['status', 'user'])
+    ...mapState(['otherUser','status', 'user'])
   }
 }
 </script>
@@ -30,7 +30,7 @@ $couleur-icon-utilisateur: rgba(189, 189, 189);
 
 #contact {
   .contact {
-      padding: 1.2vh;
+      padding: 1.2vh 0;
       width: 14.5vw;
       height: 4.5vh;
       display: flex;

@@ -1,23 +1,17 @@
 <template>
-  <div id="message">
-    <div class="message">
+  <div id="userMessage">
+    <div class="userMessage">
       <div class="utilisateur">
         <h4>{{ perso.utilisateur }}</h4>
         <i class="far fa-edit"></i>
       </div>
       <div class="utilisateur-friends">
         <!-- amis 1 -->
-        <div class="friend">
-          <Friend/>
-        </div>
+          <Friend class="active"/>
         <!-- amis 2 -->
-        <div class="friend">
           <Friend/>
-        </div>
         <!-- amis 3 -->
-        <div class="friend">
           <Friend/>
-        </div>
       </div>
     </div>
 
@@ -45,9 +39,12 @@ export default {
 <style lang="scss">
 $border: 1px solid rgb(192, 192, 192);
 $couleur-bg-1: rgb(255, 255, 255);
+$couleur-bg-2: rgba(224, 224, 224, 0.472);
+$if-hover: 3px solid rgba(189, 189, 189, 0.794);
+$if-active: 3px solid rgb(97, 97, 97);
 
-#message {
-  .message {
+#userMessage {
+  .userMessage {
     margin: 5vh auto;
     width: 65vw;
     height: 81vh;
@@ -76,6 +73,10 @@ $couleur-bg-1: rgb(255, 255, 255);
       border-right: $border;
       overflow: scroll;
     }
+  }
+  .active {
+    border-left: $if-active;
+    background: $couleur-bg-2;
   }
 }
 </style>

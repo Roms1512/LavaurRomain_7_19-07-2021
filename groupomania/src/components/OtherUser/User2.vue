@@ -9,16 +9,15 @@
         </div>
         <div class="info-profil">
           <div class="pseudo">
-            <h3>{{ perso.utilisateur }}</h3>
-            <router-link to="/setting" class='navigation'><i class="fas fa-cog"></i></router-link>
+            <h3>{{ otherUser.user }}</h3>
           </div>
           <div class="nombre-abonner">
-            <p><span class="nb-abo">{{ perso.publication }}</span> Publications</p>
-            <p><span class="nb-abo">{{ perso.abonnés }}</span> Abonnés</p>
-            <p><span class="nb-abo">{{ perso.abonnements }}</span> Abonnements</p>
+            <p><span class="nb-abo">{{ otherUser.publication }}</span> Publications</p>
+            <p><span class="nb-abo">{{ otherUser.abonnés }}</span> Abonnés</p>
+            <p><span class="nb-abo">{{ otherUser.abonnements }}</span> Abonnements</p>
           </div>
           <div class="description">
-            <p>{{ perso.bio }}</p>
+            <p>{{ otherUser.bio }}</p>
           </div>
         </div>
       </div>
@@ -33,7 +32,7 @@ import {mapState} from 'vuex'
 export default {
   name: 'utilisateur',
   computed: {
-    ...mapState(['perso', 'utilisateur', 'publication', 'abonnés', 'abonnements', 'bio'])
+    ...mapState(['otherUser', 'user', 'publication', 'abonnés', 'abonnements', 'bio'])
   }
 }
 </script>

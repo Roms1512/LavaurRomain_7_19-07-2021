@@ -2,7 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import User from '../views/User.vue'
+import OtherUser from '../views/OtherUser.vue'
 import Message from '../views/Message.vue'
+import UserMessage from '../views/UserMessage'
 import Like from '../views/Like.vue'
 import Post from '../views/Post.vue'
 import Setting from '../views/Setting.vue'
@@ -47,9 +49,19 @@ const routes = [
     component: User
   },
   {
+    path: '/friend',
+    name: 'OtherUser',
+    component: OtherUser
+  },
+  {
     path: '/message',
     name: 'Message',
     component: Message
+  },
+  {
+    path: '/userMessage',
+    name: 'UserMessage',
+    component: UserMessage
   },
   {
     path: '/like',

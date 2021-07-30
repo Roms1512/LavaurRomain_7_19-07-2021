@@ -1,12 +1,13 @@
 <template>
   <div class="friends">
-    <div class="friend">
-          <i class="fas fa-user-circle"></i>
-          <div class="name">
-              <p>{{ user }}</p>
-              <p class="status">{{ status }}</p>
-          </div>
-        </div>
+    <router-link to="/userMessage" class='friend'>
+      <i class="fas fa-user-circle"></i>
+      <div class="name">
+          <p>{{ otherUser.user }}</p>
+          <p class="status">{{ otherUser.status }}</p>
+      </div>
+    </router-link>
+      <router-view/>
   </div>
 </template>
 
@@ -16,7 +17,7 @@ import {mapState} from 'vuex'
 export default {
   name: 'friend',
   computed: {
-    ...mapState(['status', 'user'])
+    ...mapState(['otherUser', 'status', 'user'])
   }
 }
 </script>
@@ -55,11 +56,6 @@ $couleur-icon-utilisateur: rgba(189, 189, 189);
       background: $couleur-bg-2;
       border-left: $if-hover;
     }
-  }
-  
-  .friend-active {
-    border-left: $if-active;
-    background: $couleur-bg-2;
   }
 }
 </style>
