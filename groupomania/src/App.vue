@@ -76,8 +76,15 @@ $border-secondaire:1px solid rgb(231, 231, 231);
     font-weight: bold;
     color: #808080;
 
+    .fa-plus-square, .fa-comment-dots, .fa-heart, .fa-user-circle{
+      font-weight: normal;
+    }
+
     &.router-link-exact-active {
       color: #000000;
+      .fa-comment-dots, .fa-heart, .fa-user-circle {
+        font-weight: bold;
+      }
     }
   }
 }

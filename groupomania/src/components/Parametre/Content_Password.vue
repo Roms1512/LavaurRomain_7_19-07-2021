@@ -5,7 +5,7 @@
       <div class="picture">
         <div class="photo-profile">
           <i class="fas fa-user-circle"></i>
-          <p>{{ utilisateur }}</p>
+          <p>{{ perso.utilisateur }}</p>
         </div>
       </div>
       <!-- Formulaire de Modification -->
@@ -39,7 +39,7 @@ import {mapState} from 'vuex'
 export default {
   name: 'content-modify',
   computed: {
-    ...mapState(['utilisateur'])
+    ...mapState(['perso', 'utilisateur'])
   }
 }
 
@@ -53,6 +53,9 @@ export default {
 <style lang="scss">
 $couleur-lien: rgb(17,150,246);
 $couleur-icon-utilisateur: rgba(189, 189, 189);
+$couleur-bg-2: rgba(224, 224, 224, 0.472);
+$border-secondaire:1px solid rgb(231, 231, 231);
+$border: 1px solid rgb(192, 192, 192);
 
 #contentPassword{
   .picture, .formulaire {
@@ -94,6 +97,8 @@ $couleur-icon-utilisateur: rgba(189, 189, 189);
       input {
         width: 65%;
         height: 3.2vh;
+        border-radius: 5px;
+        border: $border;
       }
     }
     // Boutton Envoyer

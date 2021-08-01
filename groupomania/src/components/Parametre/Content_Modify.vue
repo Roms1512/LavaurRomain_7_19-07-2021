@@ -5,7 +5,7 @@
       <div class="picture">
         <div class="photo-profile">
           <i class="fas fa-user-circle"></i>
-          <p>{{ utilisateur }}</p>
+          <p>{{ perso.utilisateur }}</p>
         </div>
         <div class="modif">
           <button id="modifyPhoto" title="Modifier photo de profil">
@@ -18,30 +18,30 @@
         <!-- Nom Utilisateur -->
         <div class="pseudo">
           <label for="name">Nom Utilisateur</label>
-          <input type="text" name="name" aria-label="name" placeholder="Jean-dupont-123" v-model="utilisateur"/>
+          <input type="text" name="name" aria-label="name" placeholder="Jean-dupont-123" v-model="perso.utilisateur"/>
         </div>
           <p class="info">Aidez les gens à trouver votre compte à l’aide de votre nom le plus connu, que ce soit votre nom complet, votre surnom ou votre nom d’entreprise.</p>
         <!-- Biographie -->
         <div class="biographie">
           <label for="bio">Bio</label>
-          <textarea name="bio" aria-label="bio" placeholder="Bonjours à tous je m'appel..." v-model="bio"/>
+          <textarea name="bio" aria-label="bio" placeholder="Bonjours à tous je m'appel..." v-model="perso.bio"/>
         </div>
         <h5>Informations personnelles</h5>
           <p class="info">Fournissez vos informations personnelles, même si le compte est utilisé pour une entreprise, un animal ou autre chose. Elles n’apparaîtront pas sur votre profil public.</p>
         <!-- Mail -->
         <div class="mail">
           <label for="mail">Adresse Mail</label>
-          <input type="mail" name="mail" aria-label="mail" placeholder="Dupont05@outlook.com" v-model="email"/>
+          <input type="mail" name="mail" aria-label="mail" placeholder="Dupont05@outlook.com" v-model="perso.email"/>
         </div>
         <!-- Téléphone -->
         <div class="telephone">
           <label for="tel">Numéro de Téléphone</label>
-          <input type="tel" name="tel" aria-label="tel" placeholder="0612345678" v-model="telephone"/>
+          <input type="tel" name="tel" aria-label="tel" placeholder="0612345678" v-model="perso.telephone"/>
         </div>
         <!-- Genre -->
         <div class="genre">
           <label for="genre">Genre</label>
-          <input type="text" maxlength="5" aria-label="genre" name="genre" placeholder="Femme, Homme, Autre" v-model="genre"/>
+          <input type="text" maxlength="5" aria-label="genre" name="genre" placeholder="Femme, Homme, Autre" v-model="perso.genre"/>
         </div>
 
         <!-- Boutton Envoyer -->
@@ -58,7 +58,7 @@ import {mapState} from 'vuex'
 export default {
   name: 'content-modify',
   computed: {
-    ...mapState(['utilisateur', 'email', 'telephone', 'genre']),
+    ...mapState(['perso', 'utilisateur', 'email', 'telephone', 'genre']),
   },
   methods: {
     persist() {
@@ -104,6 +104,9 @@ export default {
 <style lang="scss">
 $couleur-lien: rgb(17,150,246);
 $couleur-icon-utilisateur: rgba(189, 189, 189);
+$couleur-bg-2: rgba(224, 224, 224, 0.472);
+$border-secondaire:1px solid rgb(231, 231, 231);
+$border: 1px solid rgb(192, 192, 192);
 
 #content-modify {
   .picture, .formulaire {
@@ -161,7 +164,14 @@ $couleur-icon-utilisateur: rgba(189, 189, 189);
         font-weight: bold;
       }
       input, textarea {
-        width: 70%;
+        width: 68%;
+        border-radius: 5px;
+        border: $border;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      textarea {
+        padding-top: 5px;
       }
     }
     .info {

@@ -77,6 +77,9 @@ $if-active: 3px solid rgb(97, 97, 97);
   .active {
     border-left: $if-active;
     background: $couleur-bg-2;
+    &:hover {
+      border: none;
+    }
   }
 }
 </style>

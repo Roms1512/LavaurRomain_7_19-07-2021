@@ -35,6 +35,8 @@ $couleur-icon-utilisateur: rgba(189, 189, 189);
       height: 4.5vh;
       display: flex;
       align-items: center;
+      border-radius: 10px;
+      cursor: pointer;
         i {
           font-size: xxx-large;
           color: $couleur-icon-utilisateur;
@@ -50,9 +52,7 @@ $couleur-icon-utilisateur: rgba(189, 189, 189);
           }
         }
     &:hover{
-      cursor: pointer;
       background: $couleur-bg-2;
-      border-radius: 10px;
     }
   }
 }

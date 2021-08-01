@@ -6,7 +6,6 @@
         <h3>Publications</h3>
       </div>
       <h4>Il n'y a aucune publication !</h4>
-      <button>Publier</button>
     </div>
   </div>
 </template>

@@ -65,9 +65,9 @@ $couleur-lien: rgb(17,150,246);
   }
   .inscription {
     position: relative;
-    margin: 3vh auto 40vh;
+    margin: 3vh auto 35.9vh;
     width: 500px;
-    height: 310px;
+    height: 350px;
     border: $border;
     background: $couleur-bg-1;
     h3 {

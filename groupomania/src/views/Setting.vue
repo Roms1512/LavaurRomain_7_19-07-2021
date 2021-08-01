@@ -58,7 +58,7 @@ $if-active: 3px solid rgb(97, 97, 97);
     border: $border;
     background: $couleur-bg-1;
     .parametre {
-      width: 55%;
+      width: 45%;
       height: 100%;
       border-right: $border;
       .modify {
