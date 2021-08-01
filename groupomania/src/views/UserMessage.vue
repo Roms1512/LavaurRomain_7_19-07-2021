@@ -5,13 +5,18 @@
         <h4>{{ perso.utilisateur }}</h4>
         <i class="far fa-edit"></i>
       </div>
-      <div class="utilisateur-friends">
-        <!-- amis 1 -->
-          <Friend class="active"/>
-        <!-- amis 2 -->
-          <Friend/>
-        <!-- amis 3 -->
-          <Friend/>
+      <div class="all-message">
+        <div class="utilisateur-friends">
+          <!-- amis 1 -->
+            <Friend/>
+          <!-- amis 2 -->
+            <Friend/>
+          <!-- amis 3 -->
+            <Friend/>
+        </div>
+        <div class="contenue-message">
+          <h1>contenue message</h1>
+        </div>
       </div>
     </div>
 
@@ -67,18 +72,18 @@ $if-active: 3px solid rgb(97, 97, 97);
         right: 1.5vw;
       }
     }
-    .utilisateur-friends {
-      width: 30%;
-      height: 74vh;
-      border-right: $border;
-      overflow: scroll;
-    }
-  }
-  .active {
-    border-left: $if-active;
-    background: $couleur-bg-2;
-    &:hover {
-      border: none;
+    .all-message {
+      display: flex;
+      
+      .utilisateur-friends {
+        width: 30%;
+        height: 74vh;
+        border-right: $border;
+        overflow: scroll;
+      }
+      .contenue-message {
+        width:70%;
+      }
     }
   }
 }
