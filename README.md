@@ -4,7 +4,7 @@
 
 #### ÉTAPES 1 :
 
-Ouvrir le Terminal et se rendre dans le fichier 'groupomania' avec la commande :
+Ouvrir le Terminal et se rendre dans le fichier `groupomania` avec la commande :
 `$ cd groupomania`
 
 #### ÉTAPES 2 :
@@ -16,7 +16,7 @@ Lancer le serveur avec la commande :
 
 #### ÉTAPES 1 :
 
-Ouvrir le Terminal et se rendre dans le fichier 'API' avec la commande :
+Ouvrir le Terminal et se rendre dans le fichier `API` avec la commande :
 `$ cd API`
 
 #### ÉTAPES 2 :
