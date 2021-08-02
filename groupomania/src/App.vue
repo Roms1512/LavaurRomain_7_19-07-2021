@@ -28,6 +28,10 @@ $couleur-bg-1: rgb(255, 255, 255);
 $couleur-bg-2: rgba(224, 224, 224, 0.472);
 $border-secondaire:1px solid rgb(231, 231, 231);
 
+input {
+  outline: none;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -56,7 +60,7 @@ $border-secondaire:1px solid rgb(231, 231, 231);
       width: 12vw;
       text-align: center;
       border: $border;
-      border-radius: 5px;
+      border-radius: 15px;
       background: $couleur-bg-2;
     }
     .search {

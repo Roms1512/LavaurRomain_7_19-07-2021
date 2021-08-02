@@ -21,6 +21,10 @@ export default createStore({
       publication: 0,
       abonnés: 0,
       abonnements: 0
+    },
+    publi: {
+      nb_like: 28,
+      nb_comment: 3
     }
   },
   getters: {

@@ -2,7 +2,6 @@
   <div id="user">
     <Utilisateur/>
     <Publication/>
-    <Footer/>
   </div>
 </template>
 
@@ -10,12 +9,11 @@
 import {mapState} from 'vuex'
 import Utilisateur from '@/components/Profile/Utilisateur.vue'
 import Publication from '@/components/Profile/Publication.vue'
-import Footer from '@/components/Footer.vue'
+
 
 export default {
   name: 'like',
   components: {
-    Footer,
     Utilisateur,
     Publication
   },
@@ -24,7 +22,3 @@ export default {
   } 
 }
 </script>
-
-<style lang="scss">
-
-</style>

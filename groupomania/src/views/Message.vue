@@ -55,6 +55,7 @@ export default {
 $border: 1px solid rgb(192, 192, 192);
 $couleur-bg-1: rgb(255, 255, 255);
 $if-active: 3px solid rgb(97, 97, 97);
+$if-hover: 3px solid rgba(189, 189, 189, 0.794);
 $couleur-titre-secondaire: rgb(134, 134, 134);
 
 #message {
@@ -98,10 +99,10 @@ $couleur-titre-secondaire: rgb(134, 134, 134);
         justify-content: center;
         i {
           font-size: xxx-large;
-          border: $if-active;
+          border: 2px solid black;
           padding: 2vh;
           border-radius: 50%;
-          color: rgb(97, 97, 97);
+          color: rgb(0, 0, 0);
           font-weight: normal;
         }
         h2 {
