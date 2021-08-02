@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
 const postShema = mongoose.Schema({
-  image: { type: String, require: true },
+  imageUrl: { type: String, require: true },
   text: { type: String, require: true },
   
 })
+
+module.exports = mongoose.model('Post', postShema);

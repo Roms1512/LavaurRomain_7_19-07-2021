@@ -7,23 +7,23 @@ Dernier Projet de mon parcours de Développeur Web
 ÉTAPES 1 :
 
 Ouvrir le Terminal et se rendre dans le fichier 'groupomania' avec la commande :
-$ cd groupomania
+`$ cd groupomania`
 
 ÉTAPES 2 :
 
 Lancer le serveur avec la commande :
-$ npm run serve
+`$ npm run serve`
 
 ## Coter Back
 
 ÉTAPES 1 :
 
 Ouvrir le Terminal et se rendre dans le fichier 'API' avec la commande :
-$ cd API
+`$ cd API`
 
 ÉTAPES 2 :
 
 Lancer nodemon avec la commande :
-$ nodemon server
+`$ nodemon server`
 
 ÉTAPES 3 :
