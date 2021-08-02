@@ -2,9 +2,10 @@ const express = require('express');
 const bodyparser = require('body-parser');
 const mongoose = require('mongoose');
 
-const User = require('./models/User');
 
-const app = express();
+const PostRoutes = require('./routes/posting.js');
+const UserRoutes = require('./routes/user.js')
+
 
 require('dotenv').config();
 
@@ -19,6 +20,7 @@ mongoose
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 
+const app = express();
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -35,20 +37,7 @@ app.use((req, res, next) => {
 
 app.use(bodyparser.json());
 
-app.post('/signup', (req, res, next) => {
-  delete req.body._id;
-  const user = new User({
-    ...req.body
-  });
-  user.save()
-    .then(() => res.status(201).json({ message: 'Utilisateur Créer !'}))
-    .catch( error => res.status(400).json ({ error }));
-});
-
-app.use('/signup', (req, res, next) => {
-  User.find()
-        .then(users => res.status(200).json(users))
-        .catch( error => res.status(400).json({ error }));
-});
+app.use('/post', PostRoutes)
+app.use('/auth', UserRoutes)
 
 module.exports = app;
