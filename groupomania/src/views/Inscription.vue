@@ -6,32 +6,34 @@
     </div>
     <div class="inscription">
       <h3>Veuillez vous Inscrire</h3>
+
       <!-- Formulaire -->
-      <form action="" method="post" class="form-connect">
+      <form id="formSignup" @submit.prevent="contentSignup" action="" class="form-connect" >
+      
           <!-- Adresse mail -->
           <div class="pseudo">
             <label for="pseudo">Nom d'Utilisateur</label>
-            <input type="text" name="pseudo" aria-label="pseudo" required>
+            <input type="text" name="pseudo" aria-label="pseudo" id="pseudo" required>
           </div>
 
           <!-- Adresse mail -->
           <div class="mail">
             <label for="mail">Adresse Mail</label>
-            <input type="mail" name="mail" aria-label="mail" required>
+            <input type="mail" name="mail" aria-label="mail" id="email" required>
           </div>
 
           <!-- Mots de passe -->
           <div class="password">
             <label for="password">Mots de Passe</label>
-            <input type="password" name="password" aria-label="password" required>
+            <input type="password" name="password" aria-label="password" id="password" required>
           </div>
 
           <!-- Confirmer Mots de passe -->
           <div class="password">
             <label for="confirmPassword">Confirmer le Mots de Passe</label>
-            <input type="password" name="confirmPassword" aria-label="confirmPassword" required>
+            <input type="password" name="confirmPassword" aria-label="confirmPassword" id="confirmPassword" required>
           </div>
-          <button>Inscription</button>
+          <button id="submit">Inscription</button>
       </form>
     </div>
 
@@ -40,12 +42,20 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+import { mapMutations } from 'vuex'
 import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'inscription',
   components: {
     Footer
+  },
+  computed:{
+    ...mapState(['errors','error', 'perso', 'utilisateur', 'email'])
+  },
+  methods: {
+    ...mapMutations(['contentSignup'])
   }
 }
 </script>

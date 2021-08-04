@@ -14,7 +14,6 @@
       <router-link to="/message" class='navigation'><i class="fas fa-comment-dots"></i></router-link>
       <router-link to="/like" class='navigation'><i class="fas fa-heart"></i></router-link>
       <router-link to="/user" class="navigation"><i class="fas fa-user-circle"></i></router-link>
-      <!-- <router-link to="/about" class="navigation"><i class="fas fa-info-circle"></i></router-link> -->
     </div>
   </div>
   <router-view/>

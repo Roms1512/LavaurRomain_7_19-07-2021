@@ -14,45 +14,45 @@
         </div>
       </div>
       <!-- Formulaire de Modification -->
-      <form method="get" action="" class="formulaire">
+      <form action="" @submit.prevent="modifyForm" class="formulaire">
         <!-- Nom Utilisateur -->
         <div class="pseudo">
           <label for="name">Nom Utilisateur</label>
-          <input type="text" name="name" aria-label="name" placeholder="Jean-dupont-123" v-model="perso.utilisateur"/>
+          <input type="text" name="name" id="pseudo" aria-label="name" placeholder="Jean-dupont-123" v-model="perso.utilisateur"/>
         </div>
           <p class="info">Aidez les gens à trouver votre compte à l’aide de votre nom le plus connu, que ce soit votre nom complet, votre surnom ou votre nom d’entreprise.</p>
         <!-- Biographie -->
         <div class="biographie">
           <label for="bio">Bio</label>
-          <textarea name="bio" aria-label="bio" placeholder="Bonjours à tous je m'appel..." v-model="perso.bio"/>
+          <textarea name="bio" aria-label="bio" id="bio" placeholder="Bonjours à tous je m'appel..." v-model="perso.bio"/>
         </div>
         <h5>Informations personnelles</h5>
           <p class="info">Fournissez vos informations personnelles, même si le compte est utilisé pour une entreprise, un animal ou autre chose. Elles n’apparaîtront pas sur votre profil public.</p>
         <!-- Mail -->
         <div class="mail">
           <label for="mail">Adresse Mail</label>
-          <input type="mail" name="mail" aria-label="mail" placeholder="Dupont05@outlook.com" v-model="perso.email"/>
+          <input type="mail" name="mail" aria-label="mail" id="mail" placeholder="Dupont05@outlook.com" v-model="perso.email"/>
         </div>
         <!-- Téléphone -->
         <div class="telephone">
           <label for="tel">Numéro de Téléphone</label>
-          <input type="tel" name="tel" aria-label="tel" placeholder="0612345678" v-model="perso.telephone"/>
+          <input type="tel" name="tel" aria-label="tel" id="tel" placeholder="0612345678" v-model="perso.telephone"/>
         </div>
         <!-- Genre -->
         <div class="genre">
           <label for="genre">Genre</label>
-          <input type="text" maxlength="5" aria-label="genre" name="genre" placeholder="Femme, Homme, Autre" v-model="perso.genre"/>
+          <input type="text" maxlength="5" aria-label="genre" id="genre" name="genre" placeholder="Femme, Homme, Autre" v-model="perso.genre"/>
         </div>
 
         <!-- Boutton Envoyer -->
-        <button class="envoyer-formulaire" @click="persist">Envoyer</button>
+        <button class="envoyer-formulaire" id="modifyFormSubmit" >Envoyer</button>
       </form>
     </div>
   </div>
 </template>
 
 <script>
-import {mapState} from 'vuex'
+import {mapMutations, mapState} from 'vuex'
 // import {mapAction} from 'vuex'
 
 export default {
@@ -61,15 +61,7 @@ export default {
     ...mapState(['perso', 'utilisateur', 'email', 'telephone', 'genre']),
   },
   methods: {
-    persist() {
-      event.preventDefault();
-      console.log('Stocker Donnée Perso dans le LocalStorage');
-      localStorage.utilisateur = this.utilisateur;
-      localStorage.genre = this.genre;
-      localStorage.telephone = this.telephone;
-      localStorage.email = this.email;
-      localStorage.bio = this.bio;
-    }
+    ...mapMutations(['modifyForm'])
   }
   // mounted() {
   //   if (localStorage.utilisateur || localStorage.bio || localStorage.email || localStorage.telephone || localStorage.genre) {
