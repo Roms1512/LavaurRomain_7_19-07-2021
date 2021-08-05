@@ -70,7 +70,7 @@ $couleur-bg-1: rgb(255, 255, 255);
       margin: 1vw auto;
       .abonner {
         height: 65vh;
-        width: 16vw;
+        width: 17.5vw;
         overflow: scroll;
       }
       h4 {
