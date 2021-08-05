@@ -5,16 +5,14 @@
         <i class="fas fa-th"></i>
         <h3>Publications</h3>
       </div>
-      <h4 v-if="MyPost">Il n'y a aucune publication !</h4>
+      <h4 v-if="MyPost = false">Il n'y a aucune publication !</h4>
       <div class="MyPublication">
         <MyPost/>
         <MyPost/>
         <MyPost/>
-        <MyPost/>
-        <MyPost/>
+        <Footer class="footer"/>
       </div>
     </div>
-    <Footer class="footer"/>
   </div>
 </template>
 
@@ -36,13 +34,16 @@ $if-hover: 3px solid rgba(189, 189, 189, 0.794);
 $if-active: 3px solid rgb(97, 97, 97);
 
 #publication {
-  position: relative;
   display: flex;
+  flex-direction: column;
+  width: 60vw;
+    margin: 0 auto 0 auto;
   .publication {
-    margin: 0 auto;
+    position: relative;
+    height: 100%;
     width: 60vw;
     .sous-partie {
-      margin: -3px auto 0 auto;
+      margin: -3px auto 1vh auto;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -57,14 +58,12 @@ $if-active: 3px solid rgb(97, 97, 97);
       }
     }
     .MyPublication {
-      height: 100%;
+      .footer {
+        margin-top: 5vh;
+        width: 50vw;
+        height: 7vh;
+      }
     }
-  }
-  .footer {
-    position: fixed;
-    top: 88vh;
-    left: 70vw;
-    width: 25vw;
-  }
+  }  
 }
 </style>

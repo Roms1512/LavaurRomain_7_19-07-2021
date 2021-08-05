@@ -51,13 +51,13 @@ $if-active: 3px solid rgb(97, 97, 97);
 #setting {
   .setting {
     display: flex;
-    position: relative;
     margin: 5vh auto;
     width: 65vw;
     height: 100vh;
     border: $border;
     background: $couleur-bg-1;
     .parametre {
+      position: relative;
       width: 45%;
       height: 100%;
       border-right: $border;
@@ -82,8 +82,10 @@ $if-active: 3px solid rgb(97, 97, 97);
           border-left: $if-active;
         }
       .supr{ 
-        position: relative;
-        top: 78vh;
+        position: absolute;
+        text-align: left;
+        bottom: 0vh;
+        width: 100%;
         display: flex;
         justify-content: center;
         button {
@@ -102,7 +104,21 @@ $if-active: 3px solid rgb(97, 97, 97);
       overflow: scroll;
       position: relative;
       height: 100%;
-
+    }
+  }
+}
+@media screen and(max-width:1366px) {
+  #setting {
+    .setting {
+      width: 80vw;
+      .parametre {
+        width: 59%;
+        .modify {
+          .modification {
+            font-size: medium;
+          }
+        }
+      }
     }
   }
 }

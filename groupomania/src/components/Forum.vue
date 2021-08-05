@@ -26,9 +26,16 @@ $couleur-bg-1: rgb(255, 255, 255);
 #forum {
   .forum{
     margin: 5vh 0 5vh 16.5vw;
-    width: 65vw;
+    width: 80vw;
     height: 81.5vh;
     overflow: scroll;
+  }
+}
+@media screen and(max-width:1366px) {
+  #forum {
+    .forum {
+      margin: 0 10vw 10vh 10vw;
+    }
   }
 }
 </style>

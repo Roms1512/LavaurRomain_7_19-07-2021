@@ -95,4 +95,18 @@ $couleur-lien: rgb(17,150,246);
     }
   }
 }
+@media screen and(max-width:1366px) {
+  #connexion {
+    .menu-connexion {
+      width: 20%;
+    }
+    .connexion {
+      .form-connect {
+        button {
+          top: 1vh;
+        }
+      }
+    }
+  }
+}
 </style>

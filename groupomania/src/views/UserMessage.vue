@@ -87,4 +87,11 @@ $if-active: 3px solid rgb(97, 97, 97);
     }
   }
 }
+@media screen and(max-width:1366px) {
+  #userMessage {
+    .userMessage {
+      width: 80vw;
+    }
+  }
+}
 </style>

@@ -3,11 +3,11 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     perso: {
-      utilisateur: localStorage.utilisateur || '',
-      genre: localStorage.genre || '',
-      telephone: localStorage.tel || '',
-      email: localStorage.email || '',
-      bio: localStorage.bio || '',
+      utilisateur: 'Roms1512', // localStorage.utilisateur ,
+      genre: '',//localStorage.genre,
+      telephone:'',// localStorage.tel,
+      email: '',//localStorage.email,
+      bio: 'Leny pas beau, Creative Commons attribution partage à l’identique ',//localStorage.bio,
       publication: 0,
       abonnés: 0,
       abonnements: 0
@@ -27,6 +27,7 @@ export default createStore({
     }
   },
   getters: {
+    
   },
   mutations: {
     contentSignup() {
@@ -57,21 +58,24 @@ export default createStore({
         regexPassword.test(confirmPassword.value)
         ) {
           const USER_KEY = 'perso';
-          
-          const utilisateur = [];
-          const perso = {
-            utilisateur: pseudo.value,
-            email: email.value,
+          let user = JSON.parse(localStorage.getItem(USER_KEY));
+          if (!user) {
+
+            const utilisateur = [];
+            const perso = {
+              utilisateur: pseudo.value,
+              email: email.value,
+              genre: '',
+              telephone: '',
+              bio: ''
+            }
+            localStorage.removeItem('perso');
+            utilisateur.push(perso)
+            localStorage.setItem(USER_KEY, JSON.stringify(utilisateur));
+            console.log('Stocker Donnée Perso dans le LocalStorage');
+          } else {
+            console.log('bonsoir');
           }
-
-          utilisateur.push(perso)
-          localStorage.setItem(USER_KEY, JSON.stringify(utilisateur));
-
-          
-          // localStorage.setItem('utilisateur', JSON.stringify(pseudo.value));
-          // localStorage.setItem('email', JSON.stringify(email.value));
-          
-          console.log('Stocker Donnée Perso dans le LocalStorage');
           
           console.log('Merci de vous être inscrit ! Dans le local Storage');
         
@@ -86,10 +90,10 @@ export default createStore({
     
     modifyForm() {
       let pseudo = document.getElementById('pseudo');
-      let bio = document.getElementById('pseudo');
-      let mail = document.getElementById('pseudo');
-      let tel = document.getElementById('pseudo');
-      let genre = document.getElementById('pseudo');
+      let email = document.getElementById('mail');
+      let bio = document.getElementById('bio');
+      let tel = document.getElementById('tel');
+      let genre = document.getElementById('genre');
 
       let submit = document.getElementById('modifyFormSubmit');
       console.log(submit);
@@ -97,15 +101,14 @@ export default createStore({
       const USER_KEY = 'perso';
       let user = JSON.parse(localStorage.getItem(USER_KEY));
       let equivalence = false;
-        
       
         if (!user) {
           const utilisateur = [];
           const perso = {
             utilisateur: pseudo.value,
+            email: email.value,
             genre: genre.value,
             telephone: tel.value,
-            email: email.value,
             bio: bio.value
           }
           utilisateur.push(perso)
@@ -126,17 +129,15 @@ export default createStore({
             // pas d'equivalance
             const perso = {
               utilisateur: pseudo.value,
+              email: email.value,
               genre: genre.value,
               telephone: tel.value,
-              email: email.value,
               bio: bio.value
             }
             user.push(perso);
             localStorage.setItem(USER_KEY, JSON.stringify(user));
           }
         }
-
-        
         console.log('Stocker Donnée Perso dans le LocalStorage');
     }
   },

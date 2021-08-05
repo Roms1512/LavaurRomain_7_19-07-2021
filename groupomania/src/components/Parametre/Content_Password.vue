@@ -42,12 +42,6 @@ export default {
     ...mapState(['perso', 'utilisateur'])
   }
 }
-
-// const modifyPhoto = document.getElementById('modifyPhoto');
-
-// modifyPhoto.addEventListener('click', event => {
-//   modifyPhoto.innerHTML = `Nombre de clics : ${event.detail}`;
-// });
 </script>
 
 <style lang="scss">
@@ -115,6 +109,21 @@ $border: 1px solid rgb(192, 192, 192);
       background: $couleur-lien;
       &:hover {
         cursor: pointer;
+      }
+    }
+  }
+}
+@media screen and(max-width:1366px) {
+  #contentPassword {
+    .formulaire {
+      .oldPassword, .newPassword, .confirmPassword {
+        input {
+          height:2vh;
+        }
+      }
+      .envoyer-formulaire {
+        height: 3vh;
+        width:20vw;
       }
     }
   }

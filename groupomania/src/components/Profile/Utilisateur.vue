@@ -28,12 +28,15 @@
 </template>
 
 <script>
-import {mapState} from 'vuex'
+import {mapState, mapGetters} from 'vuex'
 
 export default {
   name: 'utilisateur',
   computed: {
-    ...mapState(['perso', 'utilisateur', 'publication', 'abonnés', 'abonnements', 'bio'])
+    ...mapState(['perso', 'utilisateur', 'publication', 'abonnés', 'abonnements', 'bio']),
+    ...mapGetters({
+      
+    })
   }
 }
 </script>
@@ -48,8 +51,8 @@ $couleur-icon-utilisateur: rgba(189, 189, 189);
     margin: 5vh auto 0;
     width: 60vw;
     .info-perso {
-      display: flex;
       height: 25vh;
+      display: flex;
       border-bottom: $border;
       .image {
         width: 30%;
@@ -95,6 +98,33 @@ $couleur-icon-utilisateur: rgba(189, 189, 189);
           p {
             text-align: justify;
 
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and(max-width:1366px) {
+  #utilisateur {
+    .user {
+      .info-perso {
+        height: 100% !important;
+        margin: 0 auto 0 -10vw;
+        width: 80vw;
+        .image {
+          i {
+            font-size: 80px;
+          }
+        }
+        .info-profil {
+          .pseudo, .nombre-abonner, .description {
+            height: 2vh;
+            margin-top: -2vh;
+          }
+          .description {
+            p {
+              margin-bottom: 4vh;
+            }
           }
         }
       }

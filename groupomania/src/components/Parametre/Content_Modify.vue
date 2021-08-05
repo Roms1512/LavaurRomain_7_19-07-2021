@@ -17,8 +17,8 @@
       <form action="" @submit.prevent="modifyForm" class="formulaire">
         <!-- Nom Utilisateur -->
         <div class="pseudo">
-          <label for="name">Nom Utilisateur</label>
-          <input type="text" name="name" id="pseudo" aria-label="name" placeholder="Jean-dupont-123" v-model="perso.utilisateur"/>
+          <label for="pseudo">Nom Utilisateur</label>
+          <input type="text" name="pseudo" id="pseudo" aria-label="pseudo" placeholder="Jean-dupont-123" v-model="perso.utilisateur" pattern="^[A-Za-z0-9][a-z0-9]{3,20}"/>
         </div>
           <p class="info">Aidez les gens à trouver votre compte à l’aide de votre nom le plus connu, que ce soit votre nom complet, votre surnom ou votre nom d’entreprise.</p>
         <!-- Biographie -->
@@ -31,7 +31,7 @@
         <!-- Mail -->
         <div class="mail">
           <label for="mail">Adresse Mail</label>
-          <input type="mail" name="mail" aria-label="mail" id="mail" placeholder="Dupont05@outlook.com" v-model="perso.email"/>
+          <input type="mail" name="mail" aria-label="mail" id="mail" placeholder="Dupont05@outlook.com" v-model="perso.email" pattern="^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$"/>
         </div>
         <!-- Téléphone -->
         <div class="telephone">
@@ -62,33 +62,17 @@ export default {
   },
   methods: {
     ...mapMutations(['modifyForm'])
+  },
+  mounted() {
+    if (localStorage.utilisateur) {
+      this.utilisateur = localStorage.utilisateur;
+    }
+  },
+  watch: {
+    name(newName) {
+      localStorage.name = newName;
+    }
   }
-  // mounted() {
-  //   if (localStorage.utilisateur || localStorage.bio || localStorage.email || localStorage.telephone || localStorage.genre) {
-  //     this.utilisateur = localStorage.utilisateur;
-  //     this.bio = localStorage.bio;
-  //     this.email = localStorage.email;
-  //     this.telephone = localStorage.telephone;
-  //     this.genre = localStorage.genre;
-  //   }
-  // },
-  // watch:{
-  //   utilisateur(newName) {
-  //     localStorage.utilisateur = newName;
-  //   },
-  //   bio(newBio) {
-  //     localStorage.bio = newBio;
-  //   },
-  //   telephone(newTel) {
-  //     localStorage.telephone = newTel;
-  //   },
-  //   email(newMail) {
-  //     localStorage.email = newMail;
-  //   },
-  //   genre(newGenre) {
-  //     localStorage.genre = newGenre;
-  //   }
-  // }
 }
 
 </script>
@@ -205,6 +189,21 @@ $border: 1px solid rgb(192, 192, 192);
       background: $couleur-lien;
       &:hover {
         cursor: pointer;
+      }
+    }
+  }
+}
+@media screen and(max-width:1366px) {
+  #content-modify {
+    .formulaire {
+      .pseudo, .genre, .mail {
+        input {
+          height:2vh;
+        }
+      }
+      .envoyer-formulaire {
+        height: 3vh;
+        width:20vw;
       }
     }
   }

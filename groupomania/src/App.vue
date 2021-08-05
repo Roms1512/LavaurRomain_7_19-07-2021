@@ -91,4 +91,21 @@ input {
     }
   }
 }
+@media screen and(max-width: 1024px) {
+  #nav {
+    justify-content: center;
+    .logo {
+      width: 40%;
+      img {
+        width: 12vh;
+      }
+    }    
+    .search-bar {
+      display:none;
+    }
+    .nav-bar {
+      width: 60%;
+    }
+  }  
+}
 </style>

@@ -49,4 +49,11 @@ $couleur-bg-1: rgb(255, 255, 255);
     overflow: scroll;
   }
 }
+@media screen and(max-width:1366px) {
+  #like {
+    .like {
+      width: 80vw;
+    }
+  }
+}
 </style>

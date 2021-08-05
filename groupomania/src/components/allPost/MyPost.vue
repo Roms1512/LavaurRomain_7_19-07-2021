@@ -46,7 +46,7 @@ $couleur-suppression: rgb(255, 31, 31);
 #MyPost {
   .MyPost {
     width: 30vw;
-    height: 100%;
+    height: 80vh;
     border: $border;
     border-radius: 10px;
     margin: 0 auto 3vh;
@@ -75,7 +75,6 @@ $couleur-suppression: rgb(255, 31, 31);
       padding: 0;
     }
     .info-post {
-      height: 100%;
       .like, .commenter {
         height: 5vh;
       }
@@ -116,8 +115,10 @@ $couleur-suppression: rgb(255, 31, 31);
       }
       .commenter {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: center;
+        position: relative;
+        bottom: 0vh;
         i {
           font-size: xx-large;
           color: $couleur-icon-utilisateur;
@@ -131,6 +132,16 @@ $couleur-suppression: rgb(255, 31, 31);
           padding-left: 10px;
         }
         }
+    }
+  }
+}
+@media screen and(max-width:1366px) {
+  #MyPost {
+    .MyPost {
+      width: 60vw;
+      img {
+        width: 60vw;
+      }
     }
   }
 }

@@ -135,4 +135,16 @@ $couleur-suppression: rgb(255, 31, 31);
     }
   }
 }
+@media screen and(max-width:1366px) {
+  #OtherPost {
+    .OtherPost {
+      width: 75vw;
+    }
+    .contenue-post {
+      img {
+        width: 75vw;
+      }
+    }
+  }
+}
 </style>

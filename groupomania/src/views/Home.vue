@@ -58,6 +58,7 @@ $couleur-bg-1: rgb(255, 255, 255);
   .home {
     display: flex;
     align-items: flex-start;
+    position: relative;
     .footer {
       position: fixed;
       top: 88vh;
@@ -77,6 +78,20 @@ $couleur-bg-1: rgb(255, 255, 255);
         padding-bottom: 1vh;
         width: 60%;
         border-bottom: $border;
+      }
+    }
+  }
+}
+@media screen and(max-width: 1366px) {
+  #home {
+    .home {
+      .footer {
+        bottom: 0vh;
+        left: 0vw;
+        width: 25vw;
+      }
+      .contact {
+        display: none;
       }
     }
   }

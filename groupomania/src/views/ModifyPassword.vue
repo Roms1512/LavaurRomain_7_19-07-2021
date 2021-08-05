@@ -51,13 +51,13 @@ $if-active: 3px solid rgb(97, 97, 97);
 #modifyPassword {
   .modifyPassword {
     display: flex;
-    position: relative;
     margin: 5vh auto;
     width: 65vw;
     height: 60vh;
     border: $border;
     background: $couleur-bg-1;
     .parametre {
+      position: relative;
       width: 30%;
       height: 100%;
       border-right: $border;
@@ -66,7 +66,6 @@ $if-active: 3px solid rgb(97, 97, 97);
         padding-bottom: 1vh;
         height: 48px;
         border-bottom: $border-secondaire;
-        
         .modification{
           color: black;
           font-size: larger;
@@ -83,8 +82,10 @@ $if-active: 3px solid rgb(97, 97, 97);
         border-left: $if-active;
       }
       .supr{ 
-        position: relative;
-        top: 38vh;
+        position: absolute;
+        text-align: left;
+        bottom: 0vh;
+        width: 100%;
         display: flex;
         justify-content: center;
         button {
@@ -104,6 +105,20 @@ $if-active: 3px solid rgb(97, 97, 97);
       position: relative;
       height: 100%;
       width: 70%;
+    }
+  }
+}
+@media screen and(max-width:1366px) {
+  #modifyPassword {
+    .modifyPassword {
+      width: 80vw;
+      .parametre {
+        .modify {
+          .modification {
+            font-size: medium;
+          }
+        }
+      }
     }
   }
 }

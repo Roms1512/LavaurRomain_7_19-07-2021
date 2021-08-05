@@ -121,4 +121,15 @@ $couleur-lien: rgb(17,150,246);
     }
   }
 }
+@media screen and(max-width:1366px) {
+  #inscription {
+    .menu-inscription {
+      width: 20%;
+    }
+    .inscription {
+      height: 450px;
+     
+    }
+  }
+}
 </style>

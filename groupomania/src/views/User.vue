@@ -1,7 +1,7 @@
 <template>
   <div id="user">
-    <Utilisateur/>
-    <Publication/>
+    <Utilisateur class="profil-user"/>
+    <Publication class="post-user"/>
   </div>
 </template>
 
@@ -22,3 +22,7 @@ export default {
   } 
 }
 </script>
+
+<style lang="scss">
+
+</style>

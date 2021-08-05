@@ -115,4 +115,11 @@ $couleur-titre-secondaire: rgb(134, 134, 134);
     }
   }
 }
+@media screen and(max-width:1366px) {
+  #message {
+    .message {
+      width: 80vw;
+    }
+  }
+}
 </style>
