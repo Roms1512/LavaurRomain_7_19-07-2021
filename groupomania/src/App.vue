@@ -55,12 +55,23 @@ input {
     position: relative;
     width: 40%;
     input {
+      padding-left: 20px;
       height: 3vh;
       width: 12vw;
-      text-align: center;
+      text-align: flex-start;
       border: $border;
       border-radius: 15px;
       background: $couleur-bg-2;
+      &::placeholder  {
+       position: relative;
+       left: 3.3vw;
+     }
+     &:focus {
+       &::placeholder {
+         position: relative;
+         left: -0.7vw;
+       }
+     }
     }
     .search {
       position: absolute ;
