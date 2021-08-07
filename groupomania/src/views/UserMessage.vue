@@ -2,8 +2,14 @@
   <div id="userMessage">
     <div class="userMessage">
       <div class="utilisateur">
-        <h4>{{ perso.utilisateur }}</h4>
-        <i class="far fa-edit"></i>
+        <div class="utilisateur-perso">
+          <h4>{{ perso.utilisateur }}</h4>
+          <i class="far fa-edit"></i>
+        </div>
+        <div class="user-title">
+          <i class="fas fa-user-circle"></i>
+          <h4>{{ otherUser.user }}</h4>
+        </div>
       </div>
       <div class="all-message">
         <div class="utilisateur-friends">
@@ -36,7 +42,7 @@ export default {
     Footer
   },
   computed: {
-    ...mapState(['perso', 'utilisateur'])
+    ...mapState(['perso', 'utilisateur', 'otherUser', 'user'])
   }
 }
 </script>
@@ -47,6 +53,7 @@ $couleur-bg-1: rgb(255, 255, 255);
 $couleur-bg-2: rgba(224, 224, 224, 0.472);
 $if-hover: 3px solid rgba(189, 189, 189, 0.794);
 $if-active: 3px solid rgb(97, 97, 97);
+$couleur-icon-utilisateur: rgba(189, 189, 189);
 
 #userMessage {
   .userMessage {
@@ -56,20 +63,44 @@ $if-active: 3px solid rgb(97, 97, 97);
     border: $border;
     background: $couleur-bg-1;
     .utilisateur {
-      position: relative;
-      width: 100%;
-      height: 7vh;
-      border-bottom: $border;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       font-size: x-large;
-      h4 {
-        width: 100%;
+      height: 7vh;
+      width: 100%;
+      border-bottom: $border;
+      .utilisateur-perso {
+        width: 30%;
+        height: 7vh;
+        border-right: $border;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h4 {
+          width: 30%;
+        }
+        i{  
+          position: absolute;
+          right: 1.5vw;
+        }
       }
-      i{
-        position: absolute;
-        right: 1.5vw;
+      .user-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        top: -7vh;
+        left: 4vw;
+        width: 70%;
+        height: 7vh;
+        border-bottom: $border;
+        i {
+          color: $couleur-icon-utilisateur;
+          margin-right: 10px;
+          font-size: xx-large;
+        }
+        p {
+          font-weight: bold;
+        }
       }
     }
     .all-message {

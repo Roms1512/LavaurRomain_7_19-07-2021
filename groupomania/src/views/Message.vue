@@ -67,15 +67,16 @@ $couleur-titre-secondaire: rgb(134, 134, 134);
     background: $couleur-bg-1;
     .utilisateur {
       position: relative;
-      width: 100%;
+      width: 30%;
       height: 7vh;
+      border-right: $border;
       border-bottom: $border;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: x-large;
       h4 {
-        width: 100%;
+        width: 30%;
       }
       i{
         position: absolute;
