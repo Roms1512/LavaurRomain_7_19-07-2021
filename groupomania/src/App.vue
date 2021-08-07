@@ -5,7 +5,7 @@
       
     </div>
     <div class="search-bar">
-      <input type="text" aria-label="search barre" placeholder="&#xF002; Rechercher" id="search" />
+      <input type="text" aria-label="search barre" placeholder="&#xF002; Rechercher" id="search"/>
     </div>
     <div class="nav-bar">
       <router-link to="/login" class='navigation'>Co</router-link>
@@ -18,6 +18,13 @@
   </div>
   <router-view/>
 </template>
+
+<script>
+export default {
+  name: 'nav',
+  
+}
+</script>
 
 
 <style lang="scss">
@@ -55,6 +62,7 @@ input {
     position: relative;
     width: 40%;
     input {
+      font-family: 'Helvetica', FontAwesome, sans-serif;
       padding-left: 20px;
       height: 3vh;
       width: 12vw;

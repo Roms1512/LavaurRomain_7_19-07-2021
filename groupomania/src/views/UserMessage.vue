@@ -14,40 +14,40 @@
       <div class="all-message">
         <div class="utilisateur-friends">
           <!-- amis 1 -->
-            <Friend/>
+          <Friend />
           <!-- amis 2 -->
-            <Friend/>
+          <Friend />
           <!-- amis 3 -->
-            <Friend/>
+          <Friend />
         </div>
         <div class="contenue-message">
           <h1>contenue message</h1>
           <div class="barre-envois">
-            <input type="text" placeholder="Votre message...">
+            <input type="text" placeholder="Votre message..." />
           </div>
         </div>
       </div>
     </div>
 
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import Friend from '@/components/Friend.vue'
-import Footer from '@/components/Footer.vue'
+import { mapState } from "vuex";
+import Friend from "@/components/Friend.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
-  name: 'like',
+  name: "like",
   components: {
     Friend,
-    Footer
+    Footer,
   },
   computed: {
-    ...mapState(['perso', 'utilisateur', 'otherUser', 'user'])
-  }
-}
+    ...mapState(["perso", "utilisateur", "otherUser", "user"]),
+  },
+};
 </script>
 
 <style lang="scss">
@@ -81,7 +81,7 @@ $couleur-icon-utilisateur: rgba(189, 189, 189);
         h4 {
           width: 30%;
         }
-        i{  
+        i {
           position: absolute;
           right: 1.5vw;
         }
@@ -108,7 +108,7 @@ $couleur-icon-utilisateur: rgba(189, 189, 189);
     }
     .all-message {
       display: flex;
-      
+
       .utilisateur-friends {
         width: 30%;
         height: 74vh;
@@ -116,7 +116,7 @@ $couleur-icon-utilisateur: rgba(189, 189, 189);
         overflow: scroll;
       }
       .contenue-message {
-        width:70%;
+        width: 70%;
         position: relative;
         .barre-envois {
           width: 100%;
