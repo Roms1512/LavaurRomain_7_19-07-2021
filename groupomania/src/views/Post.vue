@@ -92,7 +92,7 @@ $couleur-suppression: rgb(255, 31, 31);
       .ajouter {
         padding: 5px 10px;
         margin-bottom: 2vh;
-        height: 5vh;
+        height: 4vh;
         display: flex;
         align-items: center;
         justify-content: flex-start;

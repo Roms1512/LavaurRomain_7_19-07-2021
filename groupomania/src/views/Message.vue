@@ -25,7 +25,7 @@
         <div class="contenue-vide">
           <i class="fas fa-comment-dots"></i>
           <h2>Vos Messages</h2>
-          <p>Envoyez des photos et des messages privés à un(e) collègue</p>
+          <p>Envoyez des messages privés à un(e) collègue</p>
         </div>
       </div>
     </div>

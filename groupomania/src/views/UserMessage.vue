@@ -8,7 +8,7 @@
         </div>
         <div class="user-title">
           <i class="fas fa-user-circle"></i>
-          <h4>{{ otherUser.user }}</h4>
+          <h5>{{ otherUser.user }}</h5>
         </div>
       </div>
       <div class="all-message">
@@ -22,6 +22,9 @@
         </div>
         <div class="contenue-message">
           <h1>contenue message</h1>
+          <div class="barre-envois">
+            <input type="text" placeholder="Votre message...">
+          </div>
         </div>
       </div>
     </div>
@@ -114,6 +117,20 @@ $couleur-icon-utilisateur: rgba(189, 189, 189);
       }
       .contenue-message {
         width:70%;
+        position: relative;
+        .barre-envois {
+          width: 100%;
+          position: absolute;
+          bottom: 5%;
+          margin: auto;
+          input {
+            padding-left: 10px;
+            border: $border;
+            border-radius: 20px;
+            width: 90%;
+            height: 3.5vh;
+          }
+        }
       }
     }
   }
