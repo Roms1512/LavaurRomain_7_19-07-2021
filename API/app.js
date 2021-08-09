@@ -1,24 +1,14 @@
 const express = require('express');
-const bodyparser = require('body-parser');
-const mongoose = require('mongoose');
-
+const { Sequelize } = require('sequelize');
 
 const PostRoutes = require('./routes/posting.js');
 const UserRoutes = require('./routes/user.js')
 
+const sequelize = new Sequelize('sqlite::memory:', {
+  logging: console.log
+});
 
 require('dotenv').config();
-
-mongoose
-  .connect(
-    `mongodb+srv://${process.env.DB_Name}:${process.env.DB_Password}.mongodb.net/${process.env.DB_DataBase}?retryWrites=true&w=majority`,
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true 
-    }
-  )
-  .then(() => console.log('Connexion à MongoDB réussie !'))
-  .catch(() => console.log('Connexion à MongoDB échouée !'));
 
 const app = express();
 
@@ -27,17 +17,26 @@ app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELETE, PATCH, OPTIONS"
-  );
-  next();
+    );
+    res.setHeader(
+      "Access-Control-Allow-Methods",
+      "GET, POST, PUT, DELETE, PATCH, OPTIONS"
+      );
+      next();
 });
-
-app.use(bodyparser.json());
-
-app.use('/post', PostRoutes)
-app.use('/auth', UserRoutes)
+    
+app.use.json();
+    
+const sequelize = new Sequelize('database', 'username', 'password', {
+  host: 'localhost',
+  dialect: 'mysql'/* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */
+});
+    
+try {
+  await sequelize.authenticate();
+  console.log('Connection has been established successfully.');
+} catch (error) {
+  console.error('Unable to connect to the database:', error);
+}
 
 module.exports = app;

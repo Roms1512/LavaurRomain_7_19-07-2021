@@ -1,9 +1,14 @@
-const mongoose = require('mongoose');
+const { Sequelize, DataTypes, Model } = require('sequelize');
+const sequelize = new Sequelize('sqlite::memory');
 
-const postShema = mongoose.Schema({
-  imageUrl: { type: String, require: true },
-  text: { type: String, require: true },
+class User extends Model {}
+
+User.init({
   
-})
 
-module.exports = mongoose.model('Post', postShema);
+}, {
+  sequelize,
+  modelName: 'Post'
+});
+
+console.log(User === sequelize.models.User);

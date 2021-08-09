@@ -27,7 +27,6 @@ export default createStore({
     }
   },
   getters: {
-    
   },
   mutations: {
     contentSignup() {
