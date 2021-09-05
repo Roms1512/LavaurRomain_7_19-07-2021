@@ -1,12 +1,8 @@
 const express = require('express');
-const { Sequelize } = require('sequelize');
+const Sequelize = require('sequelize');
 
-const PostRoutes = require('./routes/posting.js');
-const UserRoutes = require('./routes/user.js')
-
-const sequelize = new Sequelize('sqlite::memory:', {
-  logging: console.log
-});
+// const PostRoutes = require('./routes/post');
+const UserRoutes = require('./routes/user');
 
 require('dotenv').config();
 
@@ -25,18 +21,10 @@ app.use((req, res, next) => {
       next();
 });
     
-app.use.json();
-    
-const sequelize = new Sequelize('database', 'username', 'password', {
-  host: 'localhost',
-  dialect: 'mysql'/* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */
-});
-    
-try {
-  await sequelize.authenticate();
-  console.log('Connection has been established successfully.');
-} catch (error) {
-  console.error('Unable to connect to the database:', error);
-}
+app.use(express.json());
+
+app.use('/api/signup', UserRoutes)
+
+// app.use('/api/post', PostRoutes)
 
 module.exports = app;

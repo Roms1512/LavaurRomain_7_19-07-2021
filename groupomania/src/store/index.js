@@ -3,11 +3,11 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     perso: {
-      utilisateur: 'Roms1512', // localStorage.utilisateur ,
-      genre: '',//localStorage.genre,
-      telephone:'',// localStorage.tel,
-      email: '',//localStorage.email,
-      bio: 'Leny pas beau, Creative Commons attribution partage à l’identique ',//localStorage.bio,
+      utilisateur: [localStorage.utilisateur],
+      genre: [localStorage.genre],//localStorage.genre,
+      telephone:[localStorage.tel],// localStorage.tel,
+      email: [localStorage.email],//localStorage.email,
+      bio: [localStorage.bio],//localStorage.bio,
       publication: 0,
       abonnés: 0,
       abonnements: 0
@@ -30,12 +30,7 @@ export default createStore({
   },
   mutations: {
     contentSignup() {
-      console.log('fonction envoyer');
-
       // Recuperation des éléments
-      const form = document.getElementById('formSignup');
-
-      let submit = document.getElementById('submit')
       let pseudo = document.getElementById('pseudo');
       let email = document.getElementById('email');
       let password = document.getElementById('password');
@@ -46,21 +41,37 @@ export default createStore({
       let regexMail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/ // Adresse Email
       let regexPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/ // Mots de Passe
       
-      console.log(form);
-      console.log(submit);
-
-      
       if (
         regexPseudo.test(pseudo.value) &&
         regexMail.test(email.value) &&
         regexPassword.test(password.value) &&
         regexPassword.test(confirmPassword.value)
         ) {
+          fetch('http://localhost:3000/api/signup')
+            .then(function(res){
+              if(res.ok) {
+                console.log(`L'opération fetch a réussi !`);
+              }
+            })
+            .catch(function(error){
+              console.log('Il y a eu un problème avec l\'opération fetch: ' + error.message);
+            });
+
           const USER_KEY = 'perso';
           let user = JSON.parse(localStorage.getItem(USER_KEY));
+          const utilisateur = [];
           if (!user) {
-
-            const utilisateur = [];
+            const perso = {
+              utilisateur: pseudo.value,
+              email: email.value,
+              genre: '',
+              telephone: '',
+              bio: ''
+            }
+            utilisateur.push(perso)
+            localStorage.setItem(USER_KEY, JSON.stringify(utilisateur));
+            console.log('Merci de vous être inscrit à Groupomania ! Stockage localStorage');
+          } else {
             const perso = {
               utilisateur: pseudo.value,
               email: email.value,
@@ -71,22 +82,45 @@ export default createStore({
             localStorage.removeItem('perso');
             utilisateur.push(perso)
             localStorage.setItem(USER_KEY, JSON.stringify(utilisateur));
-            console.log('Stocker Donnée Perso dans le LocalStorage');
-          } else {
-            console.log('bonsoir');
+            console.log('Utilsateur Modifier !');
           }
-          
-          console.log('Merci de vous être inscrit ! Dans le local Storage');
-        
         } else {
-          console.log(regexPseudo.test(pseudo.value));
-          console.log(regexMail.test(email.value));
-          console.log(regexPassword.test(password.value));
-          console.log(regexPassword.test(confirmPassword.value)),
-          console.log('Formulaire Mal Remplit');
+          console.log(regexPseudo.test(pseudo.value), "Pseudo incorrect !");
+          console.log(regexMail.test(email.value), "Email incorrect !");
+          console.log(regexPassword.test(password.value), "Password incorrect !");
+          console.log(regexPassword.test(confirmPassword.value), "Password non Confirmé !"),
+          console.log('Formulaire Mal Remplit !');
         }
-    },
-    
+    }, 
+    contentLogin() {
+      // Recuperation des éléments
+      let email = document.getElementById('email');
+      let password = document.getElementById('password');
+      
+      // Regex
+      let regexMail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/ // Adresse Email
+      let regexPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/ // Mots de Passe
+      
+      if (
+        regexMail.test(email.value) &&
+        regexPassword.test(password.value)
+        ) {
+          fetch('http://localhost:3000/api/signup')
+            .then(function(res){
+              if(res.ok) {
+                console.log(`L'opération fetch a réussi !`);
+              }
+            })
+            .catch(function(error){
+              console.log('Il y a eu un problème avec l\'opération fetch: ' + error.message);
+            });
+            console.log('formulaire envoyer');
+        } else {
+          console.log(regexMail.test(email.value), "Email incorrect !");
+          console.log(regexPassword.test(password.value), "Password incorrect !");
+          console.log('Formulaire Mal Remplit !');
+        }
+    }, 
     modifyForm() {
       let pseudo = document.getElementById('pseudo');
       let email = document.getElementById('mail');

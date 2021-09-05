@@ -42,9 +42,9 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import { mapMutations } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 import Footer from '@/components/Footer.vue'
+
 
 export default {
   name: 'inscription',
@@ -55,7 +55,7 @@ export default {
     ...mapState(['errors','error', 'perso', 'utilisateur', 'email'])
   },
   methods: {
-    ...mapMutations(['contentSignup'])
+    ...mapMutations(['contentSignup']),
   }
 }
 </script>

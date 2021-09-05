@@ -1,23 +1,46 @@
-const { Sequelize, DataTypes, Model } = require('sequelize');
-const sequelize = new Sequelize('sqlite::memory');
-
-class User extends Model {}
-
-User.init({
-  // Les Attributs des Models sont définie ici
-  firstName: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  lastName: {
-    type: DataTypes.STRING
-    // allowNull est par default TRUE
-  }
-}, {
-  // D'autres options de modèle vont ici
-  sequelize, // Nous devons passer l'instance de connexion
-  modelName: 'User' // Nous devons choisir le nom du modèle
-});
-
-// le modèle défini est la classe elle-même
-console.log(User === sequelize.models.User); // true
+module.exports = (sequelize, DataTypes) => {  
+  const User = sequelize.define('User',{  
+      id:{
+          type:DataTypes.INTEGER,
+          allowNull: false,
+          primaryKey: true,
+          autoIncrement: true
+      },
+      pseudo: {
+          type: DataTypes.STRING,
+          allowNull: false,
+          unique: true
+      },
+      email: {
+          type: DataTypes.STRING,
+          allowNull: false,
+          unique: true
+      },
+      password: {
+          type: DataTypes.STRING,
+          allowNull: false,
+      },
+      avatar: {
+          type: DataTypes.STRING,
+          allowNull: true
+      },
+      admin:{
+          type:DataTypes.INTEGER,
+          allowNull: true
+      },
+  
+  });
+//   User.associate = (models) => {
+//       User.hasMany(models.Comment);
+//       User.hasMany(models.Post);
+//       /*Comment.hasMany(models.RateComment, {
+//         foreignKey: {
+//           allowNull: true,
+//         },
+//         onDelete: "CASCADE",
+//         onUpdate: "CASCADE",
+//       });*/
+//   };
+  console.log(User === sequelize.models.User); 
+  return User;
+}

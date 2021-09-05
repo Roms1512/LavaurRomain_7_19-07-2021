@@ -7,17 +7,17 @@
     <div class="connexion">
       <h3>Veuillez vous Connecter</h3>
       <!-- Formulaire -->
-      <form action="" method="get" class="form-connect">
+      <form action="" method="get" @submit.prevent="contentLogin" class="form-connect">
           <!-- Adresse mail -->
           <div class="mail">
             <label for="mail">Adresse Mail</label>
-            <input type="mail" aria-label="mail" name="mail" required>
+            <input type="mail" aria-label="mail" name="mail" id="email" required>
           </div>
 
           <!-- Mots de passe -->
           <div class="password">
             <label for="password">Mots de Passe</label>
-            <input type="password" name="password" aria-label="password" required>
+            <input type="password" name="password" aria-label="password" id="password" required>
           </div>
           <button>Connexion</button>
       </form>
@@ -29,11 +29,15 @@
 
 <script>
 import Footer from '@/components/Footer.vue'
+import { mapMutations } from 'vuex'
 
 export default {
   name: 'connexion',
   components: {
     Footer
+  },
+  methods: {
+    ...mapMutations(['contentLogin']),
   }
 }
 </script>

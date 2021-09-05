@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
-  const Post = sequelize.define('Post', {
+  const Comment = sequelize.define('Comment', {
     id:{
-      type: DataTypes.INTEGER,
+      type:DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
@@ -9,10 +9,6 @@ module.exports = (sequelize, DataTypes) => {
     text: {
       type: DataTypes.STRING,
       allowNull: false
-    },
-    image: {
-      type: DataTypes.STRING,
-      allowNull: true
     },
     like: {
       type: DataTypes.INTEGER,
@@ -24,6 +20,6 @@ module.exports = (sequelize, DataTypes) => {
     }
 
   });
-  console.log(Post === sequelize.models.Post); 
-  return Post;
+  console.log(Comment === sequelize.models.Comment); 
+  return Comment;
 }
