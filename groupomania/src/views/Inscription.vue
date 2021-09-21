@@ -8,7 +8,7 @@
       <h3>Veuillez vous Inscrire</h3>
 
       <!-- Formulaire -->
-      <form id="formSignup" @submit.prevent="contentSignup" action="" class="form-connect" >
+      <form id="formSignup" @submit.prevent="contentSignup" class="form-connect" >
       
           <!-- Adresse mail -->
           <div class="pseudo">

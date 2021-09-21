@@ -7,7 +7,7 @@
     <div class="connexion">
       <h3>Veuillez vous Connecter</h3>
       <!-- Formulaire -->
-      <form action="" method="get" @submit.prevent="contentLogin" class="form-connect">
+      <form @submit.prevent="contentLogin" class="form-connect" id="formLogin">
           <!-- Adresse mail -->
           <div class="mail">
             <label for="mail">Adresse Mail</label>

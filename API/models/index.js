@@ -12,7 +12,6 @@ let sequelize;
 
 sequelize = new Sequelize('Groupomania', 'Roms', 'root',{
   host: '192.168.64.2',
-  port: 3306,
   dialect: 'mysql'
 });
 

@@ -30,11 +30,12 @@ export default createStore({
   },
   mutations: {
     contentSignup() {
+
       // Recuperation des éléments
-      let pseudo = document.getElementById('pseudo');
-      let email = document.getElementById('email');
-      let password = document.getElementById('password');
-      let confirmPassword = document.getElementById('confirmPassword');
+      let pseudo = document.getElementById('pseudo').value;
+      let email = document.getElementById('email').value;
+      let password = document.getElementById('password').value;
+      let confirmPassword = document.getElementById('confirmPassword').value;
       
       // Regex
       let regexPseudo = /^[A-Za-z0-9][a-z0-9]{3,20}/ // Pseudo
@@ -42,48 +43,70 @@ export default createStore({
       let regexPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/ // Mots de Passe
       
       if (
-        regexPseudo.test(pseudo.value) &&
-        regexMail.test(email.value) &&
-        regexPassword.test(password.value) &&
-        regexPassword.test(confirmPassword.value)
-        ) {
-          fetch('http://localhost:3000/api/signup')
+        regexPseudo.test(pseudo) &&
+        regexMail.test(email) &&
+        regexPassword.test(password) &&
+        regexPassword.test(confirmPassword)
+      ) {
+          let formData = new FormData();
+
+          formData.append("pseudo", pseudo);
+          formData.append("mail", email);
+          formData.append("password", password);
+
+          let users = {
+            pseudo, 
+            email, 
+            password
+          }
+
+          console.log(users)
+
+          fetch('http://localhost:3006/api/user/signup', {
+            method: 'POST',
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(users)
+          })
             .then(function(res){
               if(res.ok) {
+                window.location.replace("http://localhost:8081/login")
                 console.log(`L'opération fetch a réussi !`);
+                localStorage.setItem('User', JSON.stringify(res.json.user))
               }
             })
             .catch(function(error){
               console.log('Il y a eu un problème avec l\'opération fetch: ' + error.message);
             });
 
-          const USER_KEY = 'perso';
-          let user = JSON.parse(localStorage.getItem(USER_KEY));
-          const utilisateur = [];
-          if (!user) {
-            const perso = {
-              utilisateur: pseudo.value,
-              email: email.value,
-              genre: '',
-              telephone: '',
-              bio: ''
-            }
-            utilisateur.push(perso)
-            localStorage.setItem(USER_KEY, JSON.stringify(utilisateur));
-            console.log('Merci de vous être inscrit à Groupomania ! Stockage localStorage');
-          } else {
-            const perso = {
-              utilisateur: pseudo.value,
-              email: email.value,
-              genre: '',
-              telephone: '',
-              bio: ''
-            }
-            localStorage.removeItem('perso');
-            utilisateur.push(perso)
-            localStorage.setItem(USER_KEY, JSON.stringify(utilisateur));
-            console.log('Utilsateur Modifier !');
-          }
+          // const USER_KEY = 'perso';
+          // let user = JSON.parse(localStorage.getItem(USER_KEY));
+          // const utilisateur = [];
+          // if (!user) {
+          //   const perso = {
+          //     utilisateur: pseudo.value,
+          //     email: email.value,
+          //     genre: '',
+          //     telephone: '',
+          //     bio: ''
+          //   }
+          //   utilisateur.push(perso)
+          //   localStorage.setItem(USER_KEY, JSON.stringify(utilisateur));
+          //   console.log('Merci de vous être inscrit à Groupomania ! Stockage localStorage');
+          // } else {
+          //   const perso = {
+          //     utilisateur: pseudo.value,
+          //     mail: email.value,
+          //     genre: '',
+          //     telephone: '',
+          //     bio: ''
+          //   }
+          //   localStorage.removeItem('perso');
+          //   utilisateur.push(perso)
+          //   localStorage.setItem(USER_KEY, JSON.stringify(utilisateur));
+          //   console.log('Utilsateur Modifier !');
+          // }
         } else {
           console.log(regexPseudo.test(pseudo.value), "Pseudo incorrect !");
           console.log(regexMail.test(email.value), "Email incorrect !");
@@ -94,21 +117,41 @@ export default createStore({
     }, 
     contentLogin() {
       // Recuperation des éléments
-      let email = document.getElementById('email');
-      let password = document.getElementById('password');
+      let email = document.getElementById('email').value;
+      let password = document.getElementById('password').value;
       
       // Regex
       let regexMail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/ // Adresse Email
       let regexPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/ // Mots de Passe
       
       if (
-        regexMail.test(email.value) &&
-        regexPassword.test(password.value)
+        regexMail.test(email) &&
+        regexPassword.test(password)
         ) {
-          fetch('http://localhost:3000/api/signup')
+          let formData = new FormData();
+
+          formData.append("mail", email);
+          formData.append("password", password);
+
+          let users = {
+            email, 
+            password
+          }
+
+          console.log(users)
+
+          fetch('http://localhost:3006/api/user/login', {
+            method: 'POST',
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(users)
+          })
             .then(function(res){
               if(res.ok) {
+                window.location.replace("http://localhost:8081/login")
                 console.log(`L'opération fetch a réussi !`);
+                localStorage.setItem('Token', JSON.stringify(res.json.token))
               }
             })
             .catch(function(error){
