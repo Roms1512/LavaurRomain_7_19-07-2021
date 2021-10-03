@@ -128,10 +128,6 @@ export default createStore({
         regexMail.test(email) &&
         regexPassword.test(password)
         ) {
-          let formData = new FormData();
-
-          formData.append("mail", email);
-          formData.append("password", password);
 
           let users = {
             email, 
@@ -149,9 +145,10 @@ export default createStore({
           })
             .then(function(res){
               if(res.ok) {
-                window.location.replace("http://localhost:8081/login")
                 console.log(`L'opération fetch a réussi !`);
+                console.log(JSON.stringify(res.json.token));
                 localStorage.setItem('Token', JSON.stringify(res.json.token))
+                // window.location.replace("http://localhost:8081/login")
               }
             })
             .catch(function(error){

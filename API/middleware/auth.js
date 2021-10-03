@@ -1,5 +1,4 @@
 const jwt = require('jsonwebtoken');
-const { use } = require('../routes/user');
 const JWT_SIGN_SECRET = "OPENCLASSROOMS_P7_ROM";
 
 require('dotenv').config();
@@ -27,12 +26,12 @@ exports.verifyAuth = (req, res)=> {
 //  * @returns STRING
 //  */
  exports.generateTokenForUser = (user) => {
-  console.log("user jwt" + user.id + " " + user.pseudo + " " + user.isAdmin);
+  console.log("user jwt" + user.id + " " + user.pseudo + " ");
   return jwt.sign(
     {
       userId: user.id,
       pseudo: user.pseudo,
-      admin: user.isAdmin,
+      // admin: user.admin,
     },
     JWT_SIGN_SECRET,
     { expiresIn: "24h" }
